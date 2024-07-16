@@ -4,4 +4,5 @@ type SvgProps = {
   fill?: string;
   isActive?: boolean;
   activeFill?: string;
+  className?: string
 };
