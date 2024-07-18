@@ -10,7 +10,7 @@ export const SlashIcon: FC<SvgProps> = ({
   fill,
   height,
   width,
-  className
+  className,
 }) => {
   return (
     <svg
@@ -23,7 +23,7 @@ export const SlashIcon: FC<SvgProps> = ({
     >
       <path
         d="M20.9032 0H31L10.0968 32H0L20.9032 0Z"
-        fill={isActive && activeFill ? activeFill : fill ?? dFill}
+        fill={isActive && activeFill ? activeFill : (fill ?? dFill)}
       />
     </svg>
   );

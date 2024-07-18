@@ -25,12 +25,12 @@ export const LanguageSelector: FC = () => {
   };
 
   return (
-    <div className="flex flex-row">
+    <div className="absolute top-[5.8rem] left-[7.3rem] flex flex-row items-center justify-center">
       {languageList.map((language, index) => (
         <div
           key={language.code}
           onClick={() => setLanguage(language)}
-          className={`text-5xl flex flex-row ${currentLanguage === language.code && 'text-vermilion'}`}
+          className={`text-5xl flex flex-row items-center ${currentLanguage === language.code && 'text-vermilion'}`}
         >
           {language.name.toUpperCase()}
           {index + 1 < languageList.length && <SlashIcon className="mx-5" />}
