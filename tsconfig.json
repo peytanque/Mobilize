@@ -18,6 +18,8 @@
       "@pages": ["src/renderer/pages"],
       "@components": ["src/renderer/components"],
       "@icons": ["src/renderer/icons"],
+      "@routes": ["src/renderer/routes/index.ts"],
+      "@hooks": ["src/renderer/hooks/index.ts"],
     }
   },
   "exclude": ["test", "release/build", "release/app/dist", ".erb/dll"]
