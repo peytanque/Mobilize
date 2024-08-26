@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: 'MBLZ';
+    src: url('./assets/fonts/MBLZ-Text.ttf');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'MBLZ';
+    src: url('./assets/fonts/MBLZ-Title.ttf');
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'MBLZ';
+    src: url('./assets/fonts/MBLZ-Bold.ttf');
+    font-weight: 800;
+  }
+}
+
 html,
 body,
 #root {
@@ -65,7 +83,8 @@ html,
   /* 3 */
   tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "MBLZ",sans-serif;
+  /* font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
   /* 4 */
   font-feature-settings: normal;
   /* 5 */

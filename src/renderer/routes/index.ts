@@ -9,7 +9,7 @@ export const routes = {
   control: '/hub/control',
   controlVideo: '/hub/control/video',
   controlLast: '/hub/control/last',
-  
+
   localize: '/hub/localize',
   localizeVideo: '/hub/localize/video',
   localizeLast: '/hub/localize/last',
@@ -18,3 +18,5 @@ export const routes = {
   shareVideo: '/hub/share/video',
   shareLast: '/hub/share/last',
 } as const;
+
+export default routes;
