@@ -43,6 +43,20 @@ const configuration: webpack.Configuration = {
         include: [webpackPaths.srcRendererPath],
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
+      {
+        test: /\.mp4/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            mimtetype: 'video/mp4',
+          }
+        }
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader?attrs[]=video:src'
+      },
       // {
       //   test: /\.css$/,
       //   include: [webpackPaths.srcRendererPath],

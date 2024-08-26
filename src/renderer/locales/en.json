@@ -1,0 +1,78 @@
+{
+  "home": {
+    "my": "my",
+    "duo": "duo",
+    "sub": "Open. Control. Share. Enjoy.",
+    "cta": "discover"
+  },
+  "hub": {
+    "control": {
+      "1": "open",
+      "2": "your duo",
+      "3": "remotely"
+    },
+    "charging": {
+      "1": "manage",
+      "2": "your",
+      "3": "battery"
+    },
+    "share": {
+      "1": "share",
+      "2": "your",
+      "3": "duo"
+    },
+    "localize": {
+      "1": "track",
+      "2": "your",
+      "3": "order"
+    }
+  },
+  "control": {
+    "1": "easily",
+    "2": "manage",
+    "3": "your duo",
+    "4": "wherever",
+    "5": "you are",
+    "cta": "let's go !"
+  },
+  "charging": {
+    "1": "keeps an eye",
+    "2": "on your",
+    "3": "duo's",
+    "4": "battery life",
+    "cta": "let's go !"
+  },
+  "share": {
+    "1": "share duo",
+    "2": "with your",
+    "3": "crew",
+    "cta": "let's go !"
+  },
+  "localize": {
+    "1": "track your",
+    "2": "duo's order",
+    "3": "in real time",
+    "cta": "let's go !"
+  },
+  "control-last": {
+    "1": "you are still",
+    "2": "in control",
+    "cta": "discover another feature"
+  },
+  "charging-last": {
+    "1": "you are now",
+    "2": "up to speed",
+    "cta": "discover another feature"
+  },
+  "share-last": {
+    "1": "you hold",
+    "2": "the keys to",
+    "3": "the success",
+    "cta": "discover another feature"
+  },
+  "localize-last": {
+    "1": "you know",
+    "2": "the way",
+    "cta": "discover another feature"
+  }
+}

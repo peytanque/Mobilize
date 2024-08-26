@@ -6,6 +6,7 @@ export const useHistory = () => {
 
   const goNext = () => navigate(+1);
   const goPrevious = () => navigate(-1);
+  const goHub = () => navigate(routes.hub);
   const goHome = () => navigate(routes.home);
   const goCharging = () => navigate(routes.charging);
   const goControl = () => navigate(routes.control);
@@ -20,6 +21,7 @@ export const useHistory = () => {
     goControl,
     goLocalize,
     goShare,
+    goHub
   };
 };
 

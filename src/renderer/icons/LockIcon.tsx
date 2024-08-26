@@ -1,10 +1,8 @@
 import { FC } from 'react';
 
-const dFill = '#3F3F3F';
-const dWidth = 260;
-const dHeight = 294;
-
-const dClipPathFill = 'white';
+const dFill = 'inherit';
+const dWidth = 130;
+const dHeight = 170;
 
 export const LockIcon: FC<SvgProps> = ({
   activeFill,
@@ -17,30 +15,16 @@ export const LockIcon: FC<SvgProps> = ({
     <svg
       width={width ?? dWidth}
       height={height ?? dHeight}
-      viewBox="0 0 260 294"
+      viewBox="0 0 130 170"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clipPath="url(#clip0_800_11490)">
-        <path
-          d="M241.733 97.1816H96.9527V30.838H162.203V59.1939H194.096V22.2045L171.795 0H87.3603L65.0592 22.2045V97.1816H17.4222V262.514L49.0719 294.027H210.111L241.761 262.514V97.1816H241.733ZM209.84 263.189H49.3157V128.02H209.813V263.189H209.84Z"
-          fill={isActive && activeFill ? activeFill : (fill ?? dFill)}
-        />
-        <path
-          d="M145.511 150.656H113.618V240.148H145.511V150.656Z"
-          fill={isActive && activeFill ? activeFill : (fill ?? dFill)}
-        />
-      </g>
-      <defs>
-        <clipPath id="clip0_800_11490">
-          <rect
-            width="224.311"
-            height="294"
-            fill={dClipPathFill}
-            transform="translate(17.4222)"
-          />
-        </clipPath>
-      </defs>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M45.9293 56.1836H129.524V151.783L111.252 170H18.272L0 151.783V56.1836H27.5119V12.8349L40.3854 0H89.1385L102.012 12.8349V34.2194H83.5946V17.8239H45.9293V56.1836ZM18.4174 152.155H111.106V74.0075H18.4174V152.155ZM55.5495 121.249H73.9669V139.073H55.5495V121.249Z"
+        fill={isActive && activeFill ? activeFill : (fill ?? dFill)}
+      />
     </svg>
   );
 };

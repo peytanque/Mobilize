@@ -1,0 +1,83 @@
+{
+  "home": {
+    "my": "my",
+    "duo": "duo",
+    "sub": "ouvrez. contrôlez. partagez. profitez.",
+    "cta": "découvrir"
+  },
+  "hub": {
+    "control": {
+      "1": "ouvrez",
+      "2": "à distance",
+      "3": "votre duo"
+    },
+    "charging": {
+      "1": "contrôlez",
+      "2": "votre",
+      "3": "charge"
+    },
+    "share": {
+      "1": "partagez",
+      "2": "votre",
+      "3": "duo"
+    },
+    "localize": {
+      "1": "suivez",
+      "2": "votre",
+      "3": "commande"
+    }
+  },
+  "control": {
+    "1": "gérez",
+    "2": "facilement",
+    "3": "votre duo",
+    "4": "où que vous",
+    "5": "soyez",
+    "cta": "c'est parti !"
+  },
+  "charging": {
+    "1": "gardez l’oeil",
+    "2": "sur le niveau",
+    "3": "d’autonomie",
+    "4": "de votre DUO",
+    "cta": "c'est parti !"
+  },
+  "share": {
+    "1": "partagez",
+    "2": "duo avec",
+    "3": "votre tribu",
+    "cta": "c'est parti !"
+  },
+  "localize": {
+    "1": "suivez la",
+    "2": "commande",
+    "3": "de votre duo",
+    "4": "en temps",
+    "5": "réel",
+    "cta": "c'est parti !"
+  },
+  "control-last": {
+    "1": "vous êtes",
+    "2": "toujours aux",
+    "3": "commandes",
+    "cta": "découvrir la suite"
+  },
+  "charging-last": {
+    "1": "vous êtes",
+    "2": "désormais",
+    "3": "au courant",
+    "cta": "découvrir la suite"
+  },
+  "share-last": {
+    "1": "vous détenez",
+    "2": "les clés",
+    "3": "du succès",
+    "cta": "découvrir la suite"
+  },
+  "localize-last": {
+    "1": "vous",
+    "2": "connaissez",
+    "3": "le chemin",
+    "cta": "découvrir la suite"
+  }
+}

@@ -2,62 +2,47 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, LanguageSelector } from '@components';
 
-import HomePhoneBgFr from '../assets/home-phone-bg-fr.png';
-import HomePhoneBgEn from '../assets/home-phone-bg-fr.png';
-import HomeVehicle from '../assets/home-vehicle.png';
 import { useHistory } from '@hooks';
 import { routes } from '@routes';
+import Logo from '../assets/logo.png';
+
+import Video from '../assets/videos/home-video.mp4';
+import ReactPlayer from 'react-player';
 
 export const Home: FC = () => {
-  const { t, i18n } = useTranslation();
-  const { goNext } = useHistory();
+  const { t } = useTranslation();
+  const { goHub } = useHistory();
 
   return (
-    <div className="flex flex-col h-full w-width px-[7.2rem] pb-[9.6rem] bg-alabaster">
-      {/* absolute elements */}
-      {i18n.language === 'fr-FR' && (
-        <img
-          src={HomePhoneBgFr}
-          className="absolute right-0 top-0"
-          alt="home-phone-bg-fr"
-        />
-      )}
-      {i18n.language === 'en-US' && (
-        <img
-          src={HomePhoneBgEn}
-          className="absolute right-0 top-0"
-          alt="home-phone-bg-en"
-        />
-      )}
+    <div className="flex flex-col h-full w-width px-[7.2rem] pb-[9.6rem] bg-black" onClick={goHub}>
       <LanguageSelector />
-      {/* ! absolute elements */}
-
-      <div className="relative mt-[51.5rem] px-[3.6rem] py-[4rem] border font-extrabold border-silver bg-alabaster w-[fit-content] leading-[12.8rem]">
-        <p className=" text-[16.8rem] uppercase">
-          <span className="text-vermilion">{t('home.title.1')}</span>{' '}
-          <span className="text-black">{t('home.title.2')}</span>
-        </p>
-        <p className="text-[16.8rem] uppercase">
-          <span className="text-black">{t('home.title.3')}</span>{' '}
-          <span className="text-vermilion">{t('home.title.4')}</span>
-        </p>
-      </div>
-      <div className="relative ml-[12.6rem] px-[3.6rem] py-[4rem] border font-extrabold border-silver bg-alabaster leading-[12.8rem] w-[fit-content]">
-        <p className="text-[5.6rem] leading-[4.8rem] uppercase text-black">
-          {t('home.sub-title.1')}{' '}
-        </p>
-        <p className="text-[5.6rem] leading-[4.8rem] uppercase text-black">
-          {t('home.sub-title.2')}
-        </p>
-      </div>
-      {/* absolute elements */}
       <img
-        src={HomeVehicle}
-        alt="home-vehicle"
-        className="absolute left-0 bottom-[23.7rem] w-full"
+        src={Logo}
+        width={255}
+        height={255}
+        alt="logo"
+        className="mt-[132px] z-10"
       />
-      {/* ! absolute elements */}
-      <div className="w-full mt-auto z-10 flex justify-end">
+      <div className="flex flex-row mt-[62px] text-white  text-[296px] leading-[143px] font-bold uppercase h-[143px] z-10">
+        <span>{t('home.my')}</span>
+        <span className="text-vermilion">{t('home.duo')}</span>
+      </div>
+      <div className="flex flex-row text-white  text-[49px] leading-[62px] font-bold uppercase mt-[2ch] z-10">
+        {t('home.sub')}
+      </div>
+      
+      <div className=" absolute w-full h-full left-0 top-0 z-1">
+        <ReactPlayer
+          playing={true}
+          width={1080}
+          height={1920}
+          muted
+          loop
+          url={Video}
+        />
+      </div>
+
+      <div className="flex-col w-full mt-auto z-10 flex justify-end">
         <Button to={routes.hub}>{t('home.cta')}</Button>
       </div>
     </div>

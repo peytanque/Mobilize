@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-const dFill = 'black';
+const dFill = 'inherit';
 const dWidth = 100;
 const dHeight = 100;
 

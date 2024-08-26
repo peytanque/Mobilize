@@ -1,32 +1,71 @@
 import { FC } from 'react';
 import { useHistory } from '@hooks';
-import { BackIcon, FlashIcon, LockIcon, LocalizeIcon } from '@icons';
-import { Button } from '@components';
+import { BackIcon, CarIcon } from '@icons';
+import { Button, language } from '@components';
 import { routes } from '@routes';
+import { ctaClassname, overlapping, tileFirstClassname } from '@pages';
+import { useTranslation } from 'react-i18next';
+import OverlappingCar from './../../assets/overlapping-car.png';
+
+const LocalizeFr: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('localize.1')}</p>
+      <p>{t('localize.2')}</p>
+      <p>{t('localize.3')}</p>
+      <p style={{textShadow: '-10px 5px 0px black', zIndex: '2'}}><span>{t('localize.4')}</span></p>
+      <p><span>{t('localize.5')}</span></p>
+      <img
+        src={OverlappingCar}
+        className={overlapping.twoLines}
+      />
+    </>
+  );
+};
+
+const LocalizeEn: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('localize.1')}</p>
+      <p>{t('localize.2')}</p>
+      <p><span>{t('localize.3')}</span></p>
+      <img
+        src={OverlappingCar}
+        className={overlapping.twoLines}
+        style={{marginBottom: 114}}
+
+      />
+    </>
+  );
+};
+
+const LocalizeIt: FC = () => {
+  const { t } = useTranslation();
+
+  return <></>;
+};
 
 export const Localize: FC = () => {
   const { goPrevious } = useHistory();
+  const { t, i18n } = useTranslation();
 
   return (
-    <div className="flex flex-col h-full w-width px-[7.2rem] pt-[21.2rem] pb-[9.6rem] bg-gradient-to-b from-vermilion via-mercury to-white">
-      <div className="absolute top-[2.8rem] left-[2.8rem]" onClick={goPrevious}>
-        <BackIcon fill="black" />
+    <div className={tileFirstClassname.box}>
+      <div className={tileFirstClassname.back} onClick={goPrevious}>
+        <BackIcon />
       </div>
-      <div className="h-full w-full flex flex-col gap-[5.2rem]">
-        <LocalizeIcon fill="#E3E3E3" />
-        <div className="relative font-bold text-[12rem] leading-[14.4rem] uppercase [&_span]:text-vermilion">
-          <p>impatient ?</p>
-          <p>suivez en</p>
-          <p>temps réél la</p>
-          <p>livraison de</p>
-          <p>
-            votre <span>duo</span>
-          </p>
-          <div className="h-[2ch] w-[1000px] absolute bottom-0"></div>
-        </div>
+      <div className={tileFirstClassname.text}>
+        <CarIcon width={256.1} height={292.69} />
+        {i18n.language === language.fr && <LocalizeFr />}
+        {i18n.language === language.en && <LocalizeEn />}
+        {i18n.language === language.it && <LocalizeIt />}
       </div>
-      <div className="mt-auto">
-        <Button to={routes.localizeVideo}>c'est parti</Button>
+      <div className={ctaClassname}>
+        <Button to={routes.localizeVideo}>{t('localize.cta')}</Button>
       </div>
     </div>
   );
