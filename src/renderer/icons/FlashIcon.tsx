@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-const dFill = '#3F3F3F';
-const dWidth = 260;
-const dHeight = 294;
+const dFill = 'inherit';
+const dWidth = 150;
+const dHeight = 170;
 
 export const FlashIcon: FC<SvgProps> = ({
   activeFill,
@@ -15,12 +15,12 @@ export const FlashIcon: FC<SvgProps> = ({
     <svg
       width={width ?? dWidth}
       height={height ?? dHeight}
-      viewBox="0 0 260 294"
+      viewBox="0 0 150 170"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M175.717 72.5433L203.519 0H49.0578L6.10352e-05 181.934H60.7655L33.0651 294H100.983L259.156 72.5433H175.717ZM67.311 289.157L106.348 151.555H41.1964L74.5988 30.819H157.16L133.981 103.362H193.734L67.311 289.157Z"
+        d="M101.605 41.9468L117.681 0H28.3667L0 105.2H35.1365L19.1192 170H58.3917L149.852 41.9468H101.605ZM38.9213 167.2L61.4937 87.6339H23.821L43.1353 17.8205H90.8749L77.4719 59.7673H112.023L38.9213 167.2Z"
         fill={isActive && activeFill ? activeFill : (fill ?? dFill)}
       />
     </svg>

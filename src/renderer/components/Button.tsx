@@ -28,9 +28,9 @@ export const Button: FC<ButtonProps> = ({
       {children}
     </Link>
   ) : (
-    <div className={buttonClassName} onClick={onClick}>
+    <button className={buttonClassName} onClick={onClick}>
       {children}
-    </div>
+    </button>
   );
 };
 

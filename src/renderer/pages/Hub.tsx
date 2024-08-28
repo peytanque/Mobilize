@@ -1,23 +1,42 @@
 import { FC } from 'react';
 import { useHistory } from '@hooks';
-import { FlashIcon, LocalizeIcon, LockIcon, ShareIcon, BackIcon } from '@icons';
+import {
+  FlashIcon,
+  CarIcon,
+  LockIcon,
+  ShareIcon,
+  HomeIcon,
+  ArrowRightIcon,
+} from '@icons';
 import { useTranslation } from 'react-i18next';
+import { LanguageSelector } from '@components';
 
-const tileClassName =
-  'bg-black px-[4rem] py-[3.6rem] rounded-[2rem] flex flex-col justify-between';
-const textWrapperClassName =
-  'grid grid-cols-1 relative text-white font-extrabold text-[6rem] leading-[7.4rem] uppercase [&_span]:text-vermilion ';
+const hubClassname = {
+  page: 'flex h-full w-width bg-black px-[7.2rem] py-[18.6rem]',
+  back: 'absolute top-[57px] left-[75px] [&_svg]:fill-white',
+  grid: 'grid grid-cols-2 h-full w-full gap-[3.7rem]',
+  item: {
+    box: 'bg-mineShaft pl-[43px] pt-[117px] pb-[98px] rounded-[2rem] flex flex-col justify-between [&_svg]:fill-white',
+    text: 'flex flex-col uppercase [&_p]:font-bold [&_p]:text-white [&_p]:font-bold [&_p]:text-[72px] [&_p]:leading-[64px] [&_span]:text-vermilion [&_svg]:fill-white [&_svg]:mt-[25px]',
+  },
+};
 
 const ShareTile = () => {
   const { goShare } = useHistory();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
-    <div className={tileClassName} onClick={goShare}>
+    <div className={hubClassname.item.box} onClick={goShare}>
       <ShareIcon />
-      <div className={textWrapperClassName}>
-        <p>{t('hub.share.1')}</p>
-        <span>{t('hub.share.2')}</span>
+      <div className={hubClassname.item.text}>
+        {t('hub.share.1') && (
+          <p>
+            <span>{t('hub.share.1')}</span>
+          </p>
+        )}
+        {t('hub.share.2') && <p>{t('hub.share.2')}</p>}
+        {t('hub.share.3') && <p>{t('hub.share.3')}</p>}
+        <ArrowRightIcon />
       </div>
     </div>
   );
@@ -25,14 +44,20 @@ const ShareTile = () => {
 
 const ChargingTile = () => {
   const { goCharging } = useHistory();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
-    <div className={tileClassName} onClick={goCharging}>
+    <div className={hubClassname.item.box} onClick={goCharging}>
       <FlashIcon />
-      <div className={textWrapperClassName}>
-        <p>{t('hub.charging.1')}</p>
-        <span>{t('hub.charging.2')}</span>
+      <div className={hubClassname.item.text}>
+      {t('hub.charging.1') && (
+          <p>
+            <span>{t('hub.charging.1')}</span>
+          </p>
+        )}
+        {t('hub.charging.2') && <p>{t('hub.charging.2')}</p>}
+        {t('hub.charging.3') && <p>{t('hub.charging.3')}</p>}
+        <ArrowRightIcon />
       </div>
     </div>
   );
@@ -40,14 +65,20 @@ const ChargingTile = () => {
 
 const LocalizeTile = () => {
   const { goLocalize } = useHistory();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
-    <div className={tileClassName} onClick={goLocalize}>
-      <LocalizeIcon />
-      <div className={textWrapperClassName}>
-        <p>{t('hub.localize.1')}</p>
-        <span>{t('hub.localize.2')}</span>
+    <div className={hubClassname.item.box} onClick={goLocalize}>
+      <CarIcon />
+      <div className={hubClassname.item.text}>
+      {t('hub.localize.1') && (
+          <p>
+            <span>{t('hub.localize.1')}</span>
+          </p>
+        )}
+        {t('hub.localize.2') && <p>{t('hub.localize.2')}</p>}
+        {t('hub.localize.3') && <p>{t('hub.localize.3')}</p>}
+        <ArrowRightIcon />
       </div>
     </div>
   );
@@ -55,46 +86,39 @@ const LocalizeTile = () => {
 
 const ControlTile = () => {
   const { goControl } = useHistory();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
-    <div className={tileClassName} onClick={goControl}>
+    <div className={hubClassname.item.box} onClick={goControl}>
       <LockIcon />
-      <div className={textWrapperClassName}>
-        <p>{t('hub.control.1')}</p>
-        {i18n.language === 'fr-FR' && (
-          <>
-            <p>
-              <span>{t('hub.control.2')}</span> {t('hub.control.3')}
-            </p>
-            <p>{t('hub.control.4')}</p>
-          </>
+      <div className={hubClassname.item.text}>
+      {t('hub.control.1') && (
+          <p>
+            <span>{t('hub.control.1')}</span>
+          </p>
         )}
-        {i18n.language === 'en-US' && (
-          <>
-            <p>
-              <span>{t('hub.control.2')}</span>
-            </p>
-            <p>{t('hub.control.3')}</p>
-          </>
-        )}
+        {t('hub.control.2') && <p>{t('hub.control.2')}</p>}
+        {t('hub.control.3') && <p>{t('hub.control.3')}</p>}
+        <ArrowRightIcon />
       </div>
     </div>
   );
 };
 
 export const Hub: FC = () => {
-  const { goPrevious } = useHistory();
+  const { goHome } = useHistory();
 
   return (
-    <div className="flex h-full w-width bg-shark px-[7.2rem] py-[18.6rem]">
-      <div className="absolute top-[2.8rem] left-[2.8rem]" onClick={goPrevious}>
-        <BackIcon fill="white" />
+    <div className={hubClassname.page}>
+      <LanguageSelector />
+
+      <div className={hubClassname.back} onClick={goHome}>
+        <HomeIcon />
       </div>
-      <div className="grid grid-cols-2 h-full w-full gap-[3.7rem]">
+      <div className={hubClassname.grid}>
+        <ControlTile />
         <ChargingTile />
         <ShareTile />
-        <ControlTile />
         <LocalizeTile />
       </div>
     </div>
