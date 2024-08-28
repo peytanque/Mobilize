@@ -106,13 +106,13 @@ const ControlTile = () => {
 };
 
 export const Hub: FC = () => {
-  const { goPrevious } = useHistory();
+  const { goHome } = useHistory();
 
   return (
     <div className={hubClassname.page}>
       <LanguageSelector />
 
-      <div className={hubClassname.back} onClick={goPrevious}>
+      <div className={hubClassname.back} onClick={goHome}>
         <HomeIcon />
       </div>
       <div className={hubClassname.grid}>
