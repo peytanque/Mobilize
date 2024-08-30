@@ -38,7 +38,7 @@ export const Home: FC = () => {
           height={1920}
           muted
           loop
-          url={Video}
+          url={'https://s3-figma-videos-production-sig.figma.com/video/1119227739719941906/ORG/ae5a/6978/-2055-4b89-b87d-ae83041ad6e8?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dR7vE0ssjeKUFP7nLC-6To2J7Z8Jyk9TFViqMbm8VHST8pukt0CBmEkCfouSpZ7AyLKrTnhHFSRwUs9BoD3pBRPJDNUTpWfJ~m9TDOMZoSPLU-unnnmh3sSSx0ILxskmbxx2IfLNW4QxARVoX0AX0~sguu9WyZIOmEPA~vh~S2nL0X6rTamvvxvzt0oMXoBoN1gYeN7PjjNsx7Jr7RcWT8vBHQx7Slj5LehJK32uakOP9V2FQxErfIshG1QbAckm~oqH~H8tx0C7QBwaPLbbJAf5OJ6ND1xYK37h3vVTD4Q764-XRUtQ9bPf62l8uTtyjVqagL5bNrTFvMyLG0BGDg__'}
         />
       </div>
 
