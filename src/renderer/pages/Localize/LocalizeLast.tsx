@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { useHistory } from '@hooks';
 import { Button, language } from '@components';
 import { tileLastClassname } from '@pages';
@@ -7,44 +7,73 @@ import { OnProgressProps } from 'react-player/base';
 import LocalizeLastVideo from './../../assets/videos/localize-last.mp4';
 import { useTranslation } from 'react-i18next';
 
+const LocalizeLastFr: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('localize-last.1')}</p>
+      <p>{t('localize-last.2')}</p>
+      <p><span>{t('localize-last.3')}</span></p>
+    </>
+  );
+};
+
+const LocalizeLastEn: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('localize-last.1')}</p>
+      <p><span>{t('localize-last.2')}</span></p>
+    </>
+  );
+};
+
+const LocalizeLastIt: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('localize-last.1')}</p>
+      <p><span>{t('localize-last.2')}</span></p>
+    </>
+  );
+};
+
 export const LocalizeLast: FC = () => {
   const { goHub } = useHistory();
   const { t, i18n } = useTranslation();
 
   const ref = useRef<ReactPlayer>(null);
+  const [videoState, setVideoState] = useState({
+    played: 0,
+    seeking: false,
+  });
+  const { seeking, played } = videoState;
 
-  const [duration, setDuration] = useState<number>(0);
-  const [seek, setSeek] = useState<number>(0);
-  const [progress, setProgress] = useState<OnProgressProps | null>(null);
-
-  const handleProgress = (state: OnProgressProps) => {
-    if (!seek) {
-      setProgress(state);
+  const onProgress = (state: OnProgressProps) => {
+    if (!seeking) {
+      setVideoState({ ...videoState, ...state });
     }
   };
+
+  useEffect(() => {
+    if (played === 1) {
+      const timeoutId = setTimeout(() => {
+        goHub()
+      }, 3000);
+  
+      return () => clearTimeout(timeoutId);
+    }
+  }, [played])
 
   return (
     <div className={tileLastClassname.box}>
       <div className={tileLastClassname.text}>
-      {i18n.language === language.fr && (
-          <>
-            <p>{t('localize-last.1')}</p>
-            <p>
-             {t('localize-last.2')}
-            </p>
-            <p>
-              <span>{t('localize-last.3')}</span>
-            </p>
-          </>
-        )}
-        {i18n.language === language.en && (
-          <>
-            <p>{t('localize-last.1')}</p>
-            <p>
-              <span>{t('localize-last.2')}</span>
-            </p>
-          </>
-        )}
+        {i18n.language === language.fr && <LocalizeLastFr />}
+        {i18n.language === language.en && <LocalizeLastEn />}
+        {i18n.language === language.it && <LocalizeLastIt />}
       </div>
       <div className={tileLastClassname.button}>
         <Button onClick={goHub}>{t('localize-last.cta')}</Button>
@@ -57,9 +86,7 @@ export const LocalizeLast: FC = () => {
           muted
           url={LocalizeLastVideo}
           ref={ref}
-          onSeek={(currentSeek) => setSeek(currentSeek)}
-          onProgress={(currentProgress) => handleProgress(currentProgress)}
-          onDuration={(currentDuration) => setDuration(currentDuration)}
+          onProgress={(currentProgress) => onProgress(currentProgress)}
         />
       </div>
     </div>

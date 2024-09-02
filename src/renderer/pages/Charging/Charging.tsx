@@ -46,7 +46,19 @@ const ChargingEn: FC = () => {
 const ChargingIt: FC = () => {
   const { t } = useTranslation();
 
-  return <></>;
+  return (
+    <>
+      <p>{t('charging.1')}</p>
+      <p>{t('charging.2')}</p>
+      <p><span>{t('charging.3')}</span></p>
+      <p><span>{t('charging.4')}</span></p>
+      <img
+        src={OverlappingCar}
+        className={overlapping.twoLines}
+        style={{marginBottom: 114}}
+      />
+    </>
+  );
 };
 
 export const Charging: FC = () => {

@@ -2,82 +2,81 @@
   "home": {
     "my": "my",
     "duo": "duo",
-    "sub": "ouvrez. contrôlez. partagez. profitez.",
-    "cta": "découvrir"
+    "sub": "l’app che guida la tua duo",
+    "cta": "scoprire"
   },
   "hub": {
     "control": {
-      "1": "ouvrez",
-      "2": "à distance",
-      "3": "votre duo"
+      "1": "apri la ",
+      "2": "tua DUO",
+      "3": "senza",
+      "4": "chiavi"
     },
     "charging": {
-      "1": "contrôlez",
-      "2": "votre",
-      "3": "charge"
+      "1": "gestisci",
+      "2": "la tua",
+      "3": "autonomia"
     },
     "share": {
-      "1": "partagez",
-      "2": "votre",
-      "3": "duo"
+      "1": "condividi",
+      "2": "la tua",
+      "3": "DUO"
     },
     "localize": {
-      "1": "suivez",
-      "2": "votre",
-      "3": "commande"
+      "1": "monitora",
+      "2": "il tuo",
+      "3": "ordine"
     }
   },
   "control": {
-    "1": "gérez",
-    "2": "facilement",
-    "3": "votre duo",
-    "4": "où que vous",
-    "5": "soyez",
-    "cta": "c'est parti !"
+    "1": "gestisci",
+    "2": "facilmente",
+    "3": "la tua duo",
+    "4": "ovunque",
+    "5": "tu sia",
+    "cta": "cominciamo!"
   },
   "charging": {
-    "1": "gardez l’oeil",
-    "2": "sur le niveau",
-    "3": "d’autonomie",
-    "4": "de votre DUO",
-    "cta": "c'est parti !"
+    "1": "a traduire",
+    "2": "a traduire",
+    "3": "a traduire",
+    "4": "a traduire",
+    "cta": "cominciamo!"
   },
   "share": {
-    "1": "partagez",
-    "2": "duo avec",
-    "3": "votre tribu",
-    "cta": "c'est parti !"
+    "1": "condividi",
+    "2": "duo con la",
+    "3": "tua TRIBU",
+    "cta": "cominciamo!"
   },
   "localize": {
-    "1": "suivez la",
-    "2": "commande",
-    "3": "de votre duo",
-    "4": "en temps",
-    "5": "réel",
-    "cta": "c'est parti !"
+    "1": "segui",
+    "2": "l’ordine",
+    "3": "della tua",
+    "4": "duo",
+    "5": "in tempo",
+    "6": "reale",
+    "cta": "cominciamo!"
   },
   "control-last": {
-    "1": "vous êtes",
-    "2": "toujours aux",
-    "3": "commandes",
-    "cta": "découvrir la suite"
+    "1": "sei sempre tu",
+    "2": "al comando",
+    "cta": "scopri un’altra funzionalità"
   },
   "charging-last": {
-    "1": "vous êtes",
-    "2": "désormais",
-    "3": "au courant",
-    "cta": "découvrir la suite"
+    "1": "ora sei",
+    "2": "al corrente",
+    "cta": "scopri un’altra funzionalità"
   },
   "share-last": {
-    "1": "vous détenez",
-    "2": "les clés",
-    "3": "du succès",
-    "cta": "découvrir la suite"
+    "1": "hai in tasca",
+    "2": "le chiavi del",
+    "3": "successo",
+    "cta": "scopri un’altra funzionalità"
   },
   "localize-last": {
-    "1": "vous",
-    "2": "connaissez",
-    "3": "le chemin",
-    "cta": "découvrir la suite"
+    "1": "conosci ",
+    "2": "il percorso",
+    "cta": "scopri un’altra funzionalità"
   }
 }

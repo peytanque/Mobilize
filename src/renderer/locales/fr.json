@@ -2,14 +2,14 @@
   "home": {
     "my": "my",
     "duo": "duo",
-    "sub": "ouvrez. contrôlez. partagez. profitez.",
+    "sub": "l'app qui pilote votre duo",
     "cta": "découvrir"
   },
   "hub": {
     "control": {
       "1": "ouvrez",
-      "2": "à distance",
-      "3": "votre duo"
+      "2": "votre duo",
+      "3": "sans clef"
     },
     "charging": {
       "1": "contrôlez",

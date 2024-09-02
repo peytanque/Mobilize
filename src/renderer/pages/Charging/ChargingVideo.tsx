@@ -1,15 +1,23 @@
-import { Button } from '@components';
-import { routes } from '@routes';
+import { CustomPlayer } from '@components';
 import { FC } from 'react';
+import TestVideo from './../../assets/videos/test.mp4';
+import { useHistory } from '@hooks';
 
 export const ChargingVideo: FC = () => {
+  const { goChargingLast } = useHistory();
+
+  const videoFr = TestVideo;
+  const videoEn =
+    'https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4';
+  const videoIt =
+    'https://videos.pexels.com/video-files/3946082/3946082-uhd_1440_2732_25fps.mp4';
+
   return (
-    <div className='h-full w-full flex flex-col items-center justify-between text-9xl py-[9.6rem] px-[7.2rem]'>
-      <div className='absolute top-0 w-full bg-alto h-[1.8rem]'></div>
-      <p>ChargingVideo</p>
-      <Button to={routes.chargingLast}>next</Button>
-    </div>
-  )
+    <CustomPlayer
+      urls={{ en: videoEn, fr: videoFr, it: videoIt }}
+      redirectTo={goChargingLast}
+    />
+  );
 };
 
 export default ChargingVideo;

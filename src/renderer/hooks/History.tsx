@@ -9,9 +9,13 @@ export const useHistory = () => {
   const goHub = () => navigate(routes.hub);
   const goHome = () => navigate(routes.home);
   const goCharging = () => navigate(routes.charging);
+  const goChargingLast = () => navigate(routes.chargingLast);
   const goControl = () => navigate(routes.control);
+  const goControlLast = () => navigate(routes.controlLast);
   const goLocalize = () => navigate(routes.localize);
+  const goLocalizeLast = () => navigate(routes.localizeLast);
   const goShare = () => navigate(routes.share);
+  const goShareLast = () => navigate(routes.shareLast);
 
   return {
     goNext,
@@ -21,7 +25,11 @@ export const useHistory = () => {
     goControl,
     goLocalize,
     goShare,
-    goHub
+    goHub,
+    goControlLast,
+    goChargingLast,
+    goLocalizeLast,
+    goShareLast,
   };
 };
 
