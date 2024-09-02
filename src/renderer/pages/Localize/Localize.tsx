@@ -15,12 +15,13 @@ const LocalizeFr: FC = () => {
       <p>{t('localize.1')}</p>
       <p>{t('localize.2')}</p>
       <p>{t('localize.3')}</p>
-      <p style={{textShadow: '-10px 5px 0px black', zIndex: '2'}}><span>{t('localize.4')}</span></p>
-      <p><span>{t('localize.5')}</span></p>
-      <img
-        src={OverlappingCar}
-        className={overlapping.twoLines}
-      />
+      <p style={{ textShadow: '-10px 5px 0px black', zIndex: '2' }}>
+        <span>{t('localize.4')}</span>
+      </p>
+      <p>
+        <span>{t('localize.5')}</span>
+      </p>
+      <img src={OverlappingCar} className={overlapping.twoLines} />
     </>
   );
 };
@@ -32,12 +33,13 @@ const LocalizeEn: FC = () => {
     <>
       <p>{t('localize.1')}</p>
       <p>{t('localize.2')}</p>
-      <p><span>{t('localize.3')}</span></p>
+      <p>
+        <span>{t('localize.3')}</span>
+      </p>
       <img
         src={OverlappingCar}
         className={overlapping.twoLines}
-        style={{marginBottom: 114}}
-
+        style={{ marginBottom: 114 }}
       />
     </>
   );
@@ -46,7 +48,25 @@ const LocalizeEn: FC = () => {
 const LocalizeIt: FC = () => {
   const { t } = useTranslation();
 
-  return <></>;
+  return (
+    <>
+      <p>{t('localize.1')}</p>
+      <p>{t('localize.2')}</p>
+      <p>{t('localize.3')}</p>
+      <p>{t('localize.4')}</p>
+      <p>
+        <span>{t('localize.5')}</span>
+      </p>
+      <p>
+        <span>{t('localize.6')}</span>
+      </p>
+      <img
+        src={OverlappingCar}
+        className={overlapping.twoLines}
+        style={{ marginBottom: -114 }}
+      />
+    </>
+  );
 };
 
 export const Localize: FC = () => {

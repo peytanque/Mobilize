@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 const dFill = 'inherit';
-const dWidth = 189;
+const dWidth = 149;
 const dHeight = 170;
 
 export const CarIcon: FC<SvgProps> = ({

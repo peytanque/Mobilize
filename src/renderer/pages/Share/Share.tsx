@@ -44,7 +44,18 @@ const ShareEn: FC = () => {
 const ShareIt: FC = () => {
   const { t } = useTranslation();
 
-  return <></>;
+  return (
+    <>
+      <p>{t('share.1')}</p>
+      <p><span>{t('share.2')}</span></p>
+      <p><span>{t('share.3')}</span></p>
+      <img
+        src={OverlappingCar}
+        className={overlapping.twoLines}
+        style={{marginBottom: 228}}
+      />
+    </>
+  );
 };
 
 export const Share: FC = () => {

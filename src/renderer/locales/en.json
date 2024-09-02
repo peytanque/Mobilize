@@ -2,14 +2,14 @@
   "home": {
     "my": "my",
     "duo": "duo",
-    "sub": "Open. Control. Share. Enjoy.",
+    "sub": "The app that drives your duo",
     "cta": "discover"
   },
   "hub": {
     "control": {
       "1": "open",
       "2": "your duo",
-      "3": "remotely"
+      "3": "keyless"
     },
     "charging": {
       "1": "manage",

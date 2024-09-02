@@ -23,10 +23,7 @@ const ControlFr: FC = () => {
       <p>
         <span>{t('control.5')}</span>
       </p>
-      <img
-        src={OverlappingCar}
-        className={overlapping.twoLines}
-      />
+      <img src={OverlappingCar} className={overlapping.twoLines} />
     </>
   );
 };
@@ -45,10 +42,7 @@ const ControlEn: FC = () => {
       <p>
         <span>{t('control.5')}</span>
       </p>
-      <img
-        src={OverlappingCar}
-        className={overlapping.twoLines}
-      />
+      <img src={OverlappingCar} className={overlapping.twoLines} />
     </>
   );
 };
@@ -56,7 +50,20 @@ const ControlEn: FC = () => {
 const ControlIt: FC = () => {
   const { t } = useTranslation();
 
-  return <></>;
+  return (
+    <>
+      <p>{t('control.1')}</p>
+      <p>{t('control.2')}</p>
+      <p>{t('control.3')}</p>
+      <p>
+        <span>{t('control.4')}</span>
+      </p>
+      <p>
+        <span>{t('control.5')}</span>
+      </p>
+      <img src={OverlappingCar} className={overlapping.twoLines} />
+    </>
+  );
 };
 
 export const Control: FC = () => {
@@ -70,7 +77,6 @@ export const Control: FC = () => {
       </div>
       <div className={tileFirstClassname.text}>
         <LockIcon width={224} height={294} />
-
         {i18n.language === language.fr && <ControlFr />}
         {i18n.language === language.en && <ControlEn />}
         {i18n.language === language.it && <ControlIt />}
