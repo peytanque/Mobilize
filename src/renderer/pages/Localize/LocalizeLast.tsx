@@ -6,15 +6,19 @@ import ReactPlayer from 'react-player';
 import { OnProgressProps } from 'react-player/base';
 import LocalizeLastVideo from './../../assets/videos/localize-last.mp4';
 import { useTranslation } from 'react-i18next';
+import { PresenceType, useIdleTimer } from 'react-idle-timer';
 
 const LocalizeLastFr: FC = () => {
   const { t } = useTranslation();
+
 
   return (
     <>
       <p>{t('localize-last.1')}</p>
       <p>{t('localize-last.2')}</p>
-      <p><span>{t('localize-last.3')}</span></p>
+      <p>
+        <span>{t('localize-last.3')}</span>
+      </p>
     </>
   );
 };
@@ -25,7 +29,9 @@ const LocalizeLastEn: FC = () => {
   return (
     <>
       <p>{t('localize-last.1')}</p>
-      <p><span>{t('localize-last.2')}</span></p>
+      <p>
+        <span>{t('localize-last.2')}</span>
+      </p>
     </>
   );
 };
@@ -36,7 +42,9 @@ const LocalizeLastIt: FC = () => {
   return (
     <>
       <p>{t('localize-last.1')}</p>
-      <p><span>{t('localize-last.2')}</span></p>
+      <p>
+        <span>{t('localize-last.2')}</span>
+      </p>
     </>
   );
 };
@@ -58,15 +66,13 @@ export const LocalizeLast: FC = () => {
     }
   };
 
-  useEffect(() => {
-    if (played === 1) {
-      const timeoutId = setTimeout(() => {
-        goHub()
-      }, 3000);
-  
-      return () => clearTimeout(timeoutId);
+  const onPresenceChange = (presence: PresenceType) => {
+    if (presence.type === 'idle') {
+      goHub()
     }
-  }, [played])
+  }
+
+  const _ = useIdleTimer({ onPresenceChange, timeout: 3000, startOnMount: played === 1});
 
   return (
     <div className={tileLastClassname.box}>

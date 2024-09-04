@@ -1,14 +1,11 @@
 import { CustomPlayer } from '@components';
-import { FC, useRef } from 'react';
-import ReactPlayer from 'react-player';
-import TestVideo from './../../assets/videos/test.mp4';
+import { FC } from 'react';
+import LocalizeVideoFr from './../../assets/videos/localize-fr.mp4';
 import { useHistory } from '@hooks';
 
 export const LocalizeVideo: FC = () => {
-  const ref = useRef<ReactPlayer>(null);
   const { goLocalizeLast } = useHistory();
 
-  const videoFr = TestVideo;
   const videoEn =
     'https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4';
   const videoIt =
@@ -16,7 +13,7 @@ export const LocalizeVideo: FC = () => {
 
   return (
     <CustomPlayer
-      urls={{ en: videoEn, fr: videoFr, it: videoIt }}
+      urls={{ en: videoEn, fr: LocalizeVideoFr, it: videoIt }}
       redirectTo={goLocalizeLast}
     />
   );

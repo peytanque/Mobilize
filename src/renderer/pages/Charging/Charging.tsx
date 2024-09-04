@@ -14,12 +14,16 @@ const ChargingFr: FC = () => {
     <>
       <p>{t('charging.1')}</p>
       <p>{t('charging.2')}</p>
-      <p><span>{t('charging.3')}</span></p>
-      <p><span>{t('charging.4')}</span></p>
+      <p>
+        <span>{t('charging.3')}</span>
+      </p>
+      <p>
+        <span>{t('charging.4')}</span>
+      </p>
       <img
         src={OverlappingCar}
         className={overlapping.twoLines}
-        style={{marginBottom: 114}}
+        style={{ marginBottom: 114 }}
       />
     </>
   );
@@ -33,11 +37,13 @@ const ChargingEn: FC = () => {
       <p>{t('charging.1')}</p>
       <p>{t('charging.2')}</p>
       <p>{t('charging.3')}</p>
-      <p><span>{t('charging.4')}</span></p>
+      <p>
+        <span>{t('charging.4')}</span>
+      </p>
       <img
         src={OverlappingCar}
         className={overlapping.oneLine}
-        style={{marginBottom: 114}}
+        style={{ marginBottom: 114 }}
       />
     </>
   );
@@ -50,12 +56,20 @@ const ChargingIt: FC = () => {
     <>
       <p>{t('charging.1')}</p>
       <p>{t('charging.2')}</p>
-      <p><span>{t('charging.3')}</span></p>
-      <p><span>{t('charging.4')}</span></p>
+      <p>{t('charging.3')}</p>
+      <p>
+        <span>{t('charging.4')}</span>
+      </p>
+      <p>
+        <span>{t('charging.5')}</span>
+      </p>
+      <p>
+        <span>{t('charging.6')}</span>
+      </p>
       <img
         src={OverlappingCar}
-        className={overlapping.twoLines}
-        style={{marginBottom: 114}}
+        className={overlapping.oneLine}
+        style={{ marginBottom: 114 }}
       />
     </>
   );
@@ -77,7 +91,7 @@ export const Charging: FC = () => {
         {i18n.language === language.it && <ChargingIt />}
       </div>
       <div className={ctaClassname}>
-        <Button to={routes.chargingVideo}>{(t('charging.cta'))}</Button>
+        <Button to={routes.chargingVideo}>{t('charging.cta')}</Button>
       </div>
     </div>
   );

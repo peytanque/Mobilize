@@ -10,6 +10,7 @@ import {
 } from '@icons';
 import { useTranslation } from 'react-i18next';
 import { language, LanguageSelector } from '@components';
+import { PresenceType, useIdleTimer } from 'react-idle-timer';
 
 const hubClassname = {
   page: 'flex h-full w-width bg-black px-[7.2rem] py-[18.6rem]',
@@ -27,7 +28,7 @@ const ControlTile = () => {
 
   return (
     <div className={hubClassname.item.box} onClick={goControl}>
-      <LockIcon />
+      <LockIcon width={129.03} height={169.35}/>
       <div className={hubClassname.item.text}>
         {i18n.language === language.it ? (
           <>
@@ -60,7 +61,7 @@ const ShareTile = () => {
 
   return (
     <div className={hubClassname.item.box} onClick={goShare}>
-      <ShareIcon />
+      <ShareIcon width={169.33} height={177.41}/>
       <div className={hubClassname.item.text}>
         {t('hub.share.1') && (
           <p>
@@ -81,7 +82,7 @@ const ChargingTile = () => {
 
   return (
     <div className={hubClassname.item.box} onClick={goCharging}>
-      <FlashIcon />
+      <FlashIcon width={149.19} height={169.35}/>
       <div className={hubClassname.item.text}>
         {t('hub.charging.1') && (
           <p>
@@ -102,7 +103,7 @@ const LocalizeTile = () => {
 
   return (
     <div className={hubClassname.item.box} onClick={goLocalize}>
-      <CarIcon />
+      <CarIcon width={159.27} height={169.35}/>
       <div className={hubClassname.item.text}>
         {t('hub.localize.1') && (
           <p>
@@ -120,13 +121,13 @@ const LocalizeTile = () => {
 export const Hub: FC = () => {
   const { goHome } = useHistory();
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
+  const onPresenceChange = (presence: PresenceType) => {
+    if (presence.type === 'idle') {
       goHome()
-    }, 10000);
+    }
+  }
 
-    return () => clearTimeout(timeoutId);
-  }, [])
+  const _ = useIdleTimer({ onPresenceChange, timeout: 10000});
 
   return (
     <div className={hubClassname.page}>

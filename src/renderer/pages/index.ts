@@ -36,7 +36,7 @@ export const overlapping = {
 export const tileVideoClassname = {};
 
 export const tileLastClassname = {
-  box: 'flex flex-col h-full w-width pt-[155px] pl-[72px] pb-[96px] bg-white',
+  box: 'flex flex-col overflow-hidden h-full w-width pt-[155px] pl-[72px] pb-[96px] bg-white',
   text: 'flex flex-col uppercase [&_p]:font-bold [&_p]:text-black [&_p]:font-bold [&_p]:text-[144px] [&_p]:leading-[113px] [&_span]:text-vermilion [&_svg]:mb-[110px] [&_svg]:fill-white z-10',
   player: 'mt-[35px] absolute w-full h-full left-0 top-0 z-1',
   button: 'mt-auto pr-[72px] flex relative z-10',

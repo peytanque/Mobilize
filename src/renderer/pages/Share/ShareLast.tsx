@@ -6,6 +6,7 @@ import ReactPlayer from 'react-player';
 import ShareLastVideo from './../../assets/videos/share-last.mp4';
 import { OnProgressProps } from 'react-player/base';
 import { useTranslation } from 'react-i18next';
+import { PresenceType, useIdleTimer } from 'react-idle-timer';
 
 const ShareLastFr: FC = () => {
   const { t } = useTranslation();
@@ -68,15 +69,13 @@ export const ShareLast: FC = () => {
     }
   };
 
-  useEffect(() => {
-    if (played === 1) {
-      const timeoutId = setTimeout(() => {
-        goHub()
-      }, 3000);
-  
-      return () => clearTimeout(timeoutId);
+  const onPresenceChange = (presence: PresenceType) => {
+    if (presence.type === 'idle') {
+      goHub()
     }
-  }, [played])
+  }
+
+  const _ = useIdleTimer({ onPresenceChange, timeout: 3000, startOnMount: played === 1});
 
   return (
     <div className={tileLastClassname.box}>

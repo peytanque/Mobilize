@@ -1,12 +1,11 @@
 import { CustomPlayer } from '@components';
 import { FC } from 'react';
-import TestVideo from './../../assets/videos/test.mp4';
+import ChargingVideoFr from './../../assets/videos/charging-fr.mp4';
 import { useHistory } from '@hooks';
 
 export const ChargingVideo: FC = () => {
   const { goChargingLast } = useHistory();
 
-  const videoFr = TestVideo;
   const videoEn =
     'https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4';
   const videoIt =
@@ -14,7 +13,7 @@ export const ChargingVideo: FC = () => {
 
   return (
     <CustomPlayer
-      urls={{ en: videoEn, fr: videoFr, it: videoIt }}
+      urls={{ en: videoEn, fr: ChargingVideoFr, it: videoIt }}
       redirectTo={goChargingLast}
     />
   );

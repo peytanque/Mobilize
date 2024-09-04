@@ -37,10 +37,12 @@
     "cta": "cominciamo!"
   },
   "charging": {
-    "1": "a traduire",
-    "2": "a traduire",
-    "3": "a traduire",
-    "4": "a traduire",
+    "1": "tieni",
+    "2": "d’occhio il",
+    "3": "livello",
+    "4": "d’autonomia",
+    "5": "della tua",
+    "6": "DUO",
     "cta": "cominciamo!"
   },
   "share": {

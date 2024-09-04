@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 const dFill = 'inherit';
-const dWidth = 130;
-const dHeight = 170;
+const dWidth = 222;
+const dHeight = 292;
 
 export const LockIcon: FC<SvgProps> = ({
   activeFill,
@@ -15,14 +15,14 @@ export const LockIcon: FC<SvgProps> = ({
     <svg
       width={width ?? dWidth}
       height={height ?? dHeight}
-      viewBox="0 0 130 170"
+      viewBox="0 0 222 292"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M45.9293 56.1836H129.524V151.783L111.252 170H18.272L0 151.783V56.1836H27.5119V12.8349L40.3854 0H89.1385L102.012 12.8349V34.2194H83.5946V17.8239H45.9293V56.1836ZM18.4174 152.155H111.106V74.0075H18.4174V152.155ZM55.5495 121.249H73.9669V139.073H55.5495V121.249Z"
+        d="M77.7735 96.6246H221.935V260.431L190.627 291.646H31.3086L0 260.431V96.6246H46.2158V22.3477L68.2742 0.355469H153.661L175.72 22.3477V58.9895H144.162V30.8963H77.7735V96.6246ZM31.5577 261.07H190.378V127.165H31.5577V261.07ZM95.2148 149.627H126.773V238.66H95.2148V149.627Z"
         fill={isActive && activeFill ? activeFill : (fill ?? dFill)}
       />
     </svg>
