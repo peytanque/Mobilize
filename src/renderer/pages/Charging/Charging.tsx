@@ -1,10 +1,13 @@
 import { FC } from 'react';
-import { useHistory } from '@hooks';
+
+import { useHistory, useIdle } from '@hooks';
 import { BackIcon, FlashIcon } from '@icons';
 import { Button, language } from '@components';
-import { routes } from '@routes';
 import { ctaClassname, overlapping, tileFirstClassname } from '@pages';
+import { config } from '@config';
+
 import { useTranslation } from 'react-i18next';
+
 import OverlappingCar from './../../assets/overlapping-car.png';
 
 const ChargingFr: FC = () => {
@@ -76,12 +79,23 @@ const ChargingIt: FC = () => {
 };
 
 export const Charging: FC = () => {
-  const { goPrevious } = useHistory();
+  const { goHub, goChargingVideo } = useHistory();
   const { t, i18n } = useTranslation();
+  const { isFinish } = useIdle(config.redirectionTimer.firstScreen);
+
+  if (isFinish) {
+    goHub();
+  }
 
   return (
-    <div className={tileFirstClassname.box}>
-      <div className={tileFirstClassname.back} onClick={goPrevious}>
+    <div className={tileFirstClassname.box} onClick={goChargingVideo}>
+      <div
+        className={tileFirstClassname.back}
+        onClick={(e: React.MouseEvent<HTMLElement>) => {
+          goHub();
+          e.stopPropagation();
+        }}
+      >
         <BackIcon />
       </div>
       <div className={tileFirstClassname.text}>
@@ -91,7 +105,7 @@ export const Charging: FC = () => {
         {i18n.language === language.it && <ChargingIt />}
       </div>
       <div className={ctaClassname}>
-        <Button to={routes.chargingVideo}>{t('charging.cta')}</Button>
+        <Button onClick={goChargingVideo}>{t('charging.cta')}</Button>
       </div>
     </div>
   );

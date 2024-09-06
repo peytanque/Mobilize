@@ -1,10 +1,13 @@
 import { FC } from 'react';
-import { useHistory } from '@hooks';
+
+import { useHistory, useIdle } from '@hooks';
 import { BackIcon, CarIcon } from '@icons';
 import { Button, language } from '@components';
-import { routes } from '@routes';
 import { ctaClassname, overlapping, tileFirstClassname } from '@pages';
+import { config } from '@config';
+
 import { useTranslation } from 'react-i18next';
+
 import OverlappingCar from './../../assets/overlapping-car.png';
 
 const LocalizeFr: FC = () => {
@@ -70,12 +73,23 @@ const LocalizeIt: FC = () => {
 };
 
 export const Localize: FC = () => {
-  const { goPrevious } = useHistory();
+  const { goHub, goLocalizeVideo } = useHistory();
   const { t, i18n } = useTranslation();
+  const { isFinish } = useIdle(config.redirectionTimer.firstScreen);
+
+  if (isFinish) {
+    goHub();
+  }
 
   return (
-    <div className={tileFirstClassname.box}>
-      <div className={tileFirstClassname.back} onClick={goPrevious}>
+    <div className={tileFirstClassname.box} onClick={goLocalizeVideo}>
+      <div
+        className={tileFirstClassname.back}
+        onClick={(e: React.MouseEvent<HTMLElement>) => {
+          goHub();
+          e.stopPropagation();
+        }}
+      >
         <BackIcon />
       </div>
       <div className={tileFirstClassname.text}>
@@ -85,7 +99,7 @@ export const Localize: FC = () => {
         {i18n.language === language.it && <LocalizeIt />}
       </div>
       <div className={ctaClassname}>
-        <Button to={routes.localizeVideo}>{t('localize.cta')}</Button>
+        <Button onClick={goLocalizeVideo}>{t('localize.cta')}</Button>
       </div>
     </div>
   );

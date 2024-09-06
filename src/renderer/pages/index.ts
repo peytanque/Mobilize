@@ -25,7 +25,7 @@ export {
 export const tileFirstClassname = {
   box: 'flex flex-col h-full w-width pt-[320px] pb-[96px] bg-black',
   back: 'absolute top-[57px] left-[75px] [&_svg]:fill-white',
-  text: 'flex relative flex-col uppercase [&_p]:font-bold [&_p]:text-white [&_p]:font-bold [&_p]:ml-[72px] [&_p]:text-[148px] [&_p]:leading-[114px] [&_span]:text-vermilion [&_svg]:ml-[72px] [&_svg]:mb-[110px] [&_svg]:fill-white  overflow-hidden h-full',
+  text: 'flex relative flex-col uppercase [&_p]:font-extrabold [&_p]:text-white [&_p]:font-bold [&_p]:ml-[72px] [&_p]:text-[148px] [&_p]:leading-[114px] [&_span]:text-vermilion [&_svg]:ml-[72px] [&_svg]:mb-[110px] [&_svg]:fill-white  overflow-hidden h-full',
 };
 
 export const overlapping = {
@@ -37,9 +37,12 @@ export const tileVideoClassname = {};
 
 export const tileLastClassname = {
   box: 'flex flex-col overflow-hidden h-full w-width pt-[155px] pl-[72px] pb-[96px] bg-white',
-  text: 'flex flex-col uppercase [&_p]:font-bold [&_p]:text-black [&_p]:font-bold [&_p]:text-[144px] [&_p]:leading-[113px] [&_span]:text-vermilion [&_svg]:mb-[110px] [&_svg]:fill-white z-10',
+  text: 'flex flex-col uppercase [&_p]:font-extrabold [&_p]:text-black [&_p]:text-[144px] [&_p]:leading-[113px] [&_span]:text-vermilion [&_svg]:mb-[110px] [&_svg]:fill-white z-10',
   player: 'mt-[35px] absolute w-full h-full left-0 top-0 z-1',
   button: 'mt-auto pr-[72px] flex relative z-10',
 };
 
 export const ctaClassname = 'mt-auto px-[72px]';
+
+export const hubRedirectionTimer = 30000
+export const lastScreenRedirectionTimer = 10000

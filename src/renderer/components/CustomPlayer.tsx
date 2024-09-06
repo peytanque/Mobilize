@@ -1,17 +1,15 @@
 import { FC, useEffect, useRef, useState } from 'react';
+
+import { CustomSlider, language } from '@components';
+import { MultiLanguageVideo } from '@config';
+
 import { useTranslation } from 'react-i18next';
 import { OnProgressProps } from 'react-player/base';
 import ReactPlayer from 'react-player';
-import { CustomSlider, language } from '@components';
 
-type languageUrl = {
-  fr: string;
-  en: string;
-  it: string;
-};
 
 type CustomPlayerProps = {
-  urls: languageUrl;
+  urls: MultiLanguageVideo;
   redirectTo: () => void;
 };
 
@@ -38,13 +36,13 @@ export const CustomPlayer: FC<CustomPlayerProps> = ({
   useEffect(() => {
     switch (i18n.language) {
       case language.fr:
-        setUrl(urls.fr);
+        setUrl(urls.fr.path);
         break;
       case language.en:
-        setUrl(urls.en);
+        setUrl(urls.en.path);
         break;
       case language.it:
-        setUrl(urls.it);
+        setUrl(urls.it.path);
         break;
     }
     if (videoState.played === 1) {
@@ -58,13 +56,16 @@ export const CustomPlayer: FC<CustomPlayerProps> = ({
     }
   };
 
+  const calcNearestSeekTo = (value: number) => {
+    return Math.round(duration * ((value as number) / 100))
+  }
+
   const onChange = (event: Event, value: number | number[]) => {
-    let test = Math.round(duration * ((value as number) / 100));
-    ref.current?.seekTo(test);
+    ref.current?.seekTo(calcNearestSeekTo(value as number));
   };
 
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative bg-black">
       <ReactPlayer
         ref={ref}
         playing={playing}

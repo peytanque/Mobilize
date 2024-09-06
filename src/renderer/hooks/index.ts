@@ -1,3 +1,5 @@
 import { useHistory } from './History';
+import { useIdle } from './Idle';
+import { useVideo } from './Video';
 
-export { useHistory };
+export { useHistory, useIdle, useVideo };

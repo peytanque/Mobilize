@@ -15,13 +15,13 @@
     "outDir": ".erb/dll",
     "baseUrl": "./",
     "paths": {
-      // "@assets": ["src/renderer/assets"],
       "@pages": ["src/renderer/pages"],
       "@components": ["src/renderer/components"],
       "@icons": ["src/renderer/icons"],
       "@routes": ["src/renderer/routes"],
       "@hooks": ["src/renderer/hooks"],
       "@tokens": ["src/renderer/tokens"],
+      "@config": ["src/renderer/config/index.ts"],
     }
   },
   "exclude": ["test", "release/build", "release/app/dist", ".erb/dll"]

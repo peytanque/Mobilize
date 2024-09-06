@@ -23,18 +23,19 @@ const StyledSlider = styled(Slider)(({ theme }) => ({
     borderRadius: 0,
     position: 'relative',
     overflow: 'visible',
+    boxShadow: 'none',
     // ...(wrapperFocused && {
-      '&:after': {
-        position: 'absolute',
-        overflow: 'visible',
-        width: 0,
-        height: 0,
-        top: '-57px',
-        borderRadius: 0,
-        borderLeft: '33.5px solid transparent',
-        borderRight: '33.5px solid transparent',
-        borderTop: '33.5px solid white',
-      },
+    // '&:after': {
+    //   position: 'absolute',
+    //   overflow: 'visible',
+    //   width: 0,
+    //   height: 0,
+    //   top: '-57px',
+    //   borderRadius: 0,
+    //   borderLeft: '33.5px solid transparent',
+    //   borderRight: '33.5px solid transparent',
+    //   borderTop: '33.5px solid white',
+    // },
     // })
   },
   '& .MuiSlider-rail': {
@@ -46,11 +47,10 @@ const StyledSlider = styled(Slider)(({ theme }) => ({
 type CustomSliderProps = {
   value: number;
   onChange(event: Event, value: number | number[], activeThumb: number): void;
-  // isWrapperFocused: boolean;
 };
 
 export const CustomSlider: FC<CustomSliderProps> = ({ value, onChange }) => {
   return (
-    <StyledSlider value={value * 100} min={0} max={100} onChange={onChange}/>
+    <StyledSlider value={value * 100} min={0} max={100} onChange={onChange} />
   );
 };

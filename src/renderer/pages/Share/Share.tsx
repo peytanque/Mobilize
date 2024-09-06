@@ -1,10 +1,13 @@
 import { FC } from 'react';
-import { useHistory } from '@hooks';
+
+import { useHistory, useIdle } from '@hooks';
 import { BackIcon, ShareIcon } from '@icons';
 import { Button, language } from '@components';
-import { routes } from '@routes';
 import { ctaClassname, overlapping, tileFirstClassname } from '@pages';
+import { config } from '@config';
+
 import { useTranslation } from 'react-i18next';
+
 import OverlappingCar from './../../assets/overlapping-car.png';
 
 const ShareFr: FC = () => {
@@ -13,12 +16,16 @@ const ShareFr: FC = () => {
   return (
     <>
       <p>{t('share.1')}</p>
-      <p><span>{t('share.2')}</span></p>
-      <p><span>{t('share.3')}</span></p>
+      <p>
+        <span>{t('share.2')}</span>
+      </p>
+      <p>
+        <span>{t('share.3')}</span>
+      </p>
       <img
         src={OverlappingCar}
         className={overlapping.twoLines}
-        style={{marginBottom: 228}}
+        style={{ marginBottom: 228 }}
       />
     </>
   );
@@ -30,12 +37,16 @@ const ShareEn: FC = () => {
   return (
     <>
       <p>{t('share.1')}</p>
-      <p><span>{t('share.2')}</span></p>
-      <p><span>{t('share.3')}</span></p>
+      <p>
+        <span>{t('share.2')}</span>
+      </p>
+      <p>
+        <span>{t('share.3')}</span>
+      </p>
       <img
         src={OverlappingCar}
         className={overlapping.twoLines}
-        style={{marginBottom: 228}}
+        style={{ marginBottom: 228 }}
       />
     </>
   );
@@ -47,24 +58,39 @@ const ShareIt: FC = () => {
   return (
     <>
       <p>{t('share.1')}</p>
-      <p><span>{t('share.2')}</span></p>
-      <p><span>{t('share.3')}</span></p>
+      <p>
+        <span>{t('share.2')}</span>
+      </p>
+      <p>
+        <span>{t('share.3')}</span>
+      </p>
       <img
         src={OverlappingCar}
         className={overlapping.twoLines}
-        style={{marginBottom: 228}}
+        style={{ marginBottom: 228 }}
       />
     </>
   );
 };
 
 export const Share: FC = () => {
-  const { goPrevious } = useHistory();
+  const { goHub, goShareVideo } = useHistory();
   const { t, i18n } = useTranslation();
+  const { isFinish } = useIdle(config.redirectionTimer.firstScreen);
+
+  if (isFinish) {
+    goHub();
+  }
 
   return (
-    <div className={tileFirstClassname.box}>
-      <div className={tileFirstClassname.back} onClick={goPrevious}>
+    <div className={tileFirstClassname.box} onClick={goShareVideo}>
+      <div
+        className={tileFirstClassname.back}
+        onClick={(e: React.MouseEvent<HTMLElement>) => {
+          goHub();
+          e.stopPropagation();
+        }}
+      >
         <BackIcon />
       </div>
       <div className={tileFirstClassname.text}>
@@ -74,7 +100,7 @@ export const Share: FC = () => {
         {i18n.language === language.it && <ShareIt />}
       </div>
       <div className={ctaClassname}>
-        <Button to={routes.shareVideo}>{t('share.cta')}</Button>
+        <Button onClick={goShareVideo}>{t('share.cta')}</Button>
       </div>
     </div>
   );

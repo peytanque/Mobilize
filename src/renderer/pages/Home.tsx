@@ -1,13 +1,13 @@
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Button, LanguageSelector } from '@components';
 
 import { useHistory } from '@hooks';
-import { routes } from '@routes';
-import Logo from '../assets/logo.png';
+import { Button, LanguageSelector } from '@components';
 
-import Video from '../assets/videos/home-video.mp4';
+import { useTranslation } from 'react-i18next';
 import ReactPlayer from 'react-player';
+
+import Logo from '../assets/logo.png';
+import { config } from '@config';
 
 export const Home: FC = () => {
   const { t } = useTranslation();
@@ -23,11 +23,11 @@ export const Home: FC = () => {
         alt="logo"
         className="mt-[132px] z-10"
       />
-      <div className="flex flex-row mt-[62px] text-white  text-[296px] leading-[143px] font-bold uppercase h-[143px] z-10">
+      <div className="flex flex-row mt-[62px] text-white  text-[296px] leading-[143px] font-extrabold uppercase h-[143px] z-10">
         <span>{t('home.my')}</span>
         <span className="text-vermilion">{t('home.duo')}</span>
       </div>
-      <div className="flex flex-row text-white  text-[49px] leading-[62px] font-bold uppercase mt-[2ch] z-10">
+      <div className="flex flex-row text-white  text-[49px] leading-[62px] font-bold uppercase mt-[2ch] z-10 ml-[9px]">
         {t('home.sub')}
       </div>
       
@@ -38,12 +38,12 @@ export const Home: FC = () => {
           height={1920}
           muted
           loop
-          url={'https://s3-figma-videos-production-sig.figma.com/video/1119227739719941906/ORG/ae5a/6978/-2055-4b89-b87d-ae83041ad6e8?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dR7vE0ssjeKUFP7nLC-6To2J7Z8Jyk9TFViqMbm8VHST8pukt0CBmEkCfouSpZ7AyLKrTnhHFSRwUs9BoD3pBRPJDNUTpWfJ~m9TDOMZoSPLU-unnnmh3sSSx0ILxskmbxx2IfLNW4QxARVoX0AX0~sguu9WyZIOmEPA~vh~S2nL0X6rTamvvxvzt0oMXoBoN1gYeN7PjjNsx7Jr7RcWT8vBHQx7Slj5LehJK32uakOP9V2FQxErfIshG1QbAckm~oqH~H8tx0C7QBwaPLbbJAf5OJ6ND1xYK37h3vVTD4Q764-XRUtQ9bPf62l8uTtyjVqagL5bNrTFvMyLG0BGDg__'}
+          url={config.videos.home.path}
         />
       </div>
 
       <div className="flex-col w-full mt-auto z-10 flex justify-end">
-        <Button to={routes.hub}>{t('home.cta')}</Button>
+        <Button onClick={goHub}>{t('home.cta')}</Button>
       </div>
     </div>
   );

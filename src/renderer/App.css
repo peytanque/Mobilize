@@ -27,6 +27,8 @@ body,
   height: 1920px;
   font-size: 8px;
   overflow: hidden;
+  user-select: none;
+  /* cursor: none; */
 }
 
 @media screen and (min-width: 1080px) {

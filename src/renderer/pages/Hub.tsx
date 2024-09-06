@@ -1,5 +1,6 @@
-import { FC, useEffect } from 'react';
-import { useHistory } from '@hooks';
+import { FC } from 'react';
+
+import { useHistory, useIdle } from '@hooks';
 import {
   FlashIcon,
   CarIcon,
@@ -8,9 +9,11 @@ import {
   HomeIcon,
   ArrowRightIcon,
 } from '@icons';
+import { hubRedirectionTimer } from '@pages';
+
 import { useTranslation } from 'react-i18next';
 import { language, LanguageSelector } from '@components';
-import { PresenceType, useIdleTimer } from 'react-idle-timer';
+import { config } from '@config';
 
 const hubClassname = {
   page: 'flex h-full w-width bg-black px-[7.2rem] py-[18.6rem]',
@@ -18,7 +21,7 @@ const hubClassname = {
   grid: 'grid grid-cols-2 h-full w-full gap-[3.7rem]',
   item: {
     box: 'bg-mineShaft pl-[43px] pt-[117px] pb-[98px] rounded-[2rem] flex flex-col justify-between [&_svg]:fill-white',
-    text: 'flex flex-col uppercase [&_p]:font-bold [&_p]:text-white [&_p]:font-bold [&_p]:text-[72px] [&_p]:leading-[64px] [&_span]:text-vermilion [&_svg]:fill-white [&_svg]:mt-[25px]',
+    text: 'flex flex-col uppercase [&_p]:font-bold [&_p]:text-white [&_p]:font-bold [&_p]:text-[72px] [&_p]:leading-[58px] [&_span]:text-vermilion [&_svg]:fill-white [&_svg]:mt-[25px]',
   },
 };
 
@@ -121,13 +124,11 @@ const LocalizeTile = () => {
 export const Hub: FC = () => {
   const { goHome } = useHistory();
 
-  const onPresenceChange = (presence: PresenceType) => {
-    if (presence.type === 'idle') {
-      goHome()
-    }
-  }
+  const { isFinish } = useIdle(config.redirectionTimer.hub)
 
-  const _ = useIdleTimer({ onPresenceChange, timeout: 10000});
+  if (isFinish) {
+    goHome()
+  }
 
   return (
     <div className={hubClassname.page}>

@@ -19,11 +19,16 @@ export default {
     extend: {
       animation: {
         overlapping: `overlapping 3s ease-in-out 1`,
+        progressbtn: `progressbtn ease-in-out 1`,
       },
       keyframes: {
         overlapping: {
           '0%': { transform: 'translateX(-500px)'},
           '100%': { transform: 'translateX(1200px)' },
+        },
+        progressbtn: {
+          '0%': { width: '0%'},
+          '100%': { width: '100%' },
         },
       },
     },

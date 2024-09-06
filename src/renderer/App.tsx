@@ -1,4 +1,9 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
 import './App.css';
 import {
   Charging,
@@ -18,30 +23,67 @@ import {
 } from '@pages';
 import { routes } from '@routes';
 
+const router = createBrowserRouter([
+  {
+    path: routes.home,
+    element: <Home />,
+  },
+  {
+    path: routes.hub,
+    element: <Hub />,
+  },
+  {
+    path: routes.charging,
+    element: <Charging />,
+  },
+  {
+    path: routes.chargingVideo,
+    element: <ChargingVideo />,
+  },
+  {
+    path: routes.chargingLast,
+    element: <ChargingLast />,
+  },
+  {
+    path: routes.control,
+    element: <Control />,
+  },
+  {
+    path: routes.controlVideo,
+    element: <ControlVideo />,
+  },
+  {
+    path: routes.controlLast,
+    element: <ControlLast />,
+  },
+  {
+    path: routes.localize,
+    element: <Localize />,
+  },
+  {
+    path: routes.localizeVideo,
+    element: <LocalizeVideo />,
+  },
+  {
+    path: routes.localizeLast,
+    element: <LocalizeLast />,
+  },{
+    path: routes.share,
+    element: <Share />,
+  },
+  {
+    path: routes.shareVideo,
+    element: <ShareVideo />,
+  },
+  {
+    path: routes.shareLast,
+    element: <ShareLast />,
+  },
+
+]);
+
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path={routes.home} element={<Home />} />
-        <Route path={routes.hub} element={<Hub />} />
-
-        <Route path={routes.charging} element={<Charging />} />
-        <Route path={routes.chargingVideo} element={<ChargingVideo />} />
-        <Route path={routes.chargingLast} element={<ChargingLast />} />
-
-        <Route path={routes.control} element={<Control />} />
-        <Route path={routes.controlVideo} element={<ControlVideo />} />
-        <Route path={routes.controlLast} element={<ControlLast />} />
-
-        <Route path={routes.localize} element={<Localize />} />
-        <Route path={routes.localizeVideo} element={<LocalizeVideo />} />
-        <Route path={routes.localizeLast} element={<LocalizeLast />} />
-
-
-        <Route path={routes.share} element={<Share />} />
-        <Route path={routes.shareVideo} element={<ShareVideo />} />
-        <Route path={routes.shareLast} element={<ShareLast />} />
-      </Routes>
-    </Router>
+    <RouterProvider router={router}/>
   );
 }

@@ -6,5 +6,6 @@ import { CarIcon } from './CarIcon';
 import { BackIcon } from './BackIcon';
 import { HomeIcon } from './HomeIcon';
 import { ArrowRightIcon } from './ArrowRightIcon';
+import { VerticalSeparatorIcon } from './VerticalSeparatorIcon';
 
-export { SlashIcon, LockIcon, ShareIcon, FlashIcon, CarIcon, BackIcon, HomeIcon, ArrowRightIcon };
+export { SlashIcon, LockIcon, ShareIcon, FlashIcon, CarIcon, BackIcon, HomeIcon, ArrowRightIcon, VerticalSeparatorIcon };

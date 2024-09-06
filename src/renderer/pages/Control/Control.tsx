@@ -1,10 +1,13 @@
 import { FC } from 'react';
-import { useHistory } from '@hooks';
+
+import { useHistory, useIdle } from '@hooks';
 import { BackIcon, LockIcon } from '@icons';
 import { Button, language } from '@components';
-import { routes } from '@routes';
 import { ctaClassname, overlapping, tileFirstClassname } from '@pages';
+import { config } from '@config';
+
 import { useTranslation } from 'react-i18next';
+
 import OverlappingCar from './../../assets/overlapping-car.png';
 
 const ControlFr: FC = () => {
@@ -14,7 +17,7 @@ const ControlFr: FC = () => {
     <>
       <p>{t('control.1')}</p>
       <p>{t('control.2')}</p>
-      <p style={{ textShadow: '0px 4px 0 black', zIndex: '2' }}>
+      <p style={{ textShadow: '0px 7px 0 black', zIndex: '2' }}>
         {t('control.3')}
       </p>
       <p>
@@ -67,12 +70,23 @@ const ControlIt: FC = () => {
 };
 
 export const Control: FC = () => {
-  const { goPrevious } = useHistory();
+  const { goHub, goControlVideo } = useHistory();
   const { t, i18n } = useTranslation();
+  const { isFinish } = useIdle(config.redirectionTimer.firstScreen);
+
+  if (isFinish) {
+    goHub();
+  }
 
   return (
-    <div className={tileFirstClassname.box}>
-      <div className={tileFirstClassname.back} onClick={goPrevious}>
+    <div className={tileFirstClassname.box} onClick={goControlVideo}>
+      <div
+        className={tileFirstClassname.back}
+        onClick={(e: React.MouseEvent<HTMLElement>) => {
+          goHub();
+          e.stopPropagation();
+        }}
+      >
         <BackIcon />
       </div>
       <div className={tileFirstClassname.text}>
@@ -82,7 +96,7 @@ export const Control: FC = () => {
         {i18n.language === language.it && <ControlIt />}
       </div>
       <div className={ctaClassname}>
-        <Button to={routes.controlVideo}>{t('control.cta')}</Button>
+        <Button onClick={goControlVideo}>{t('control.cta')}</Button>
       </div>
     </div>
   );
