@@ -1,6 +1,6 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 
@@ -23,7 +23,7 @@ import {
 } from '@pages';
 import { routes } from '@routes';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: routes.home,
     element: <Home />,
