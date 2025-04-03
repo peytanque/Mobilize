@@ -182,8 +182,8 @@
     "webpack-merge": "^5.9.0"
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "Mobilize",
+    "appId": "org.erb.Mobilize",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [

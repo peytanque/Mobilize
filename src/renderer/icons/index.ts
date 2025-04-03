@@ -7,5 +7,7 @@ import { BackIcon } from './BackIcon';
 import { HomeIcon } from './HomeIcon';
 import { ArrowRightIcon } from './ArrowRightIcon';
 import { VerticalSeparatorIcon } from './VerticalSeparatorIcon';
+import { BottomCaret } from './BottomCaret';
+import { DiscoverIcon } from './DiscoverIcon';
 
-export { SlashIcon, LockIcon, ShareIcon, FlashIcon, CarIcon, BackIcon, HomeIcon, ArrowRightIcon, VerticalSeparatorIcon };
+export { SlashIcon, LockIcon, ShareIcon, FlashIcon, CarIcon, BackIcon, HomeIcon, ArrowRightIcon, VerticalSeparatorIcon, BottomCaret, DiscoverIcon };

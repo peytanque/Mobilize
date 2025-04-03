@@ -1,0 +1,83 @@
+{
+  "home": {
+    "my": "my",
+    "duo": "duo",
+    "sub": "DE APP DIE JE DUO AANSTUURT",
+    "cta": "ONTDEKKEN"
+  },
+  "hub": {
+    "control": {
+      "1": "OPEN",
+      "2": "JE",
+      "3": "DUO ZONDER",
+      "4": "SLEUTEL"
+    },
+    "charging": {
+      "1": "BEHEER",
+      "2": "JE",
+      "3": "LAADBEURT"
+    },
+    "share": {
+      "1": "JE DUO",
+      "2": "DELEN"
+    },
+    "localize": {
+      "1": "JE",
+      "2": "BESTELLING",
+      "3": "VOLGEN"
+    }
+  },
+  "control": {
+    "1": "BEHEER JE",
+    "2": "DUO IN ALLE",
+    "3": "EENVOUD,",
+    "4": "WAAR JE OOK",
+    "5": "BENT",
+    "cta": "LET'S GO!"
+  },
+  "charging": {
+    "1": "HOUD HET",
+    "2": "RIJBEREIK VAN",
+    "3": "JE DUO IN DE",
+    "4": "GATEN",
+    "cta": "LET'S GO!"
+  },
+  "share": {
+    "1": "JE DUO",
+    "2": "DELEN MET",
+    "3": "JE TRIBE",
+    "cta": "LET'S GO!"
+  },
+  "localize": {
+    "1": "VOLG DE",
+    "2": "BESTELLING",
+    "3": "VAN JE DUO",
+    "4": "IN REALTIME",
+    "cta": "LET'S GO!"
+  },
+  "control-last": {
+    "1": "JE HEBT",
+    "2": "ALTIJD DE",
+    "3": "TOUWTJES",
+    "4": "IN HANDEN",
+    "cta": "BEKIJK HET VERVOLG"
+  },
+  "charging-last": {
+    "1": "ZO, DAT",
+    "2": "WEET JE",
+    "3": "OOK WEER",
+    "cta": "BEKIJK HET VERVOLG"
+  },
+  "share-last": {
+    "1": "JIJ HEBT DE",
+    "2": "SLEUTELS TOT",
+    "3": "SUCCES IN",
+    "4": "HANDEN",
+    "cta": "BEKIJK HET VERVOLG"
+  },
+  "localize-last": {
+    "1": "JIJ KENT",
+    "2": "DE WEG",
+    "cta": "BEKIJK HET VERVOLG"
+  }
+}

@@ -8,20 +8,49 @@ import { config } from '@config';
 import ReactPlayer from 'react-player';
 import { useTranslation } from 'react-i18next';
 
-const ChargingLastFr: FC = () => {
+const ChargingLastFR: FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
       <p
         style={{
-          borderBottom: '6px solid white',
-          textShadow: '0px 4px 0 white',
-          zIndex: '2',
+          backgroundColor: 'white',
+          paddingBottom: '11px',
+          zIndex: '1',
         }}
       >
         {t('charging-last.1')}
       </p>
+      <p style={{ position: 'relative', top: '-5px' }}>
+        {t('charging-last.2')}
+      </p>
+      <p>
+        <span>{t('charging-last.3')}</span>
+      </p>
+    </>
+  );
+};
+
+const ChargingLastEN: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('charging-last.1')}</p>
+      <p>
+        <span>{t('charging-last.2')}</span>
+      </p>
+    </>
+  );
+};
+
+const ChargingLastIT: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('charging-last.1')}</p>
       <p>{t('charging-last.2')}</p>
       <p>
         <span>{t('charging-last.3')}</span>
@@ -30,7 +59,7 @@ const ChargingLastFr: FC = () => {
   );
 };
 
-const ChargingLastEn: FC = () => {
+const ChargingLastES: FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -43,7 +72,7 @@ const ChargingLastEn: FC = () => {
   );
 };
 
-const ChargingLastIt: FC = () => {
+const ChargingLastDE: FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -51,17 +80,38 @@ const ChargingLastIt: FC = () => {
       <p>{t('charging-last.1')}</p>
       <p>
         <span>{t('charging-last.2')}</span>
+      </p>
+      <p>
+        <span>{t('charging-last.3')}</span>
+      </p>
+    </>
+  );
+};
+
+const ChargingLastNL: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('charging-last.1')}</p>
+      <p>{t('charging-last.2')}</p>
+      <p>
+        <span>{t('charging-last.3')}</span>
       </p>
     </>
   );
 };
 
 export const ChargingLast: FC = () => {
-  const { isFinish, isAnimatingReset } = useIdle(config.redirectionTimer.lastScreen);
+  const { isFinish, isAnimatingReset } = useIdle(
+    config.redirectionTimer.lastScreen,
+  );
   const { goHub } = useHistory();
   const { onProgress } = useVideo();
 
   const { t, i18n } = useTranslation();
+
+  const currentLanguage = i18n.language;
 
   if (isFinish) {
     goHub();
@@ -70,9 +120,12 @@ export const ChargingLast: FC = () => {
   return (
     <div className={tileLastClassname.box}>
       <div className={tileLastClassname.text}>
-        {i18n.language === language.fr && <ChargingLastFr />}
-        {i18n.language === language.en && <ChargingLastEn />}
-        {i18n.language === language.it && <ChargingLastIt />}
+        {currentLanguage === language.fr && <ChargingLastFR />}
+        {currentLanguage === language.en && <ChargingLastEN />}
+        {currentLanguage === language.it && <ChargingLastIT />}
+        {currentLanguage === language.es && <ChargingLastES />}
+        {currentLanguage === language.de && <ChargingLastDE />}
+        {currentLanguage === language.nl && <ChargingLastNL />}
       </div>
       <div className={tileLastClassname.button}>
         <Button

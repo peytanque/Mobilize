@@ -10,26 +10,22 @@ import { useTranslation } from 'react-i18next';
 
 import OverlappingCar from './../../assets/overlapping-car.png';
 
-const LocalizeFr: FC = () => {
+const LocalizeFR: FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
-      <p>{t('localize.1')}</p>
-      <p>{t('localize.2')}</p>
-      <p>{t('localize.3')}</p>
-      <p style={{ textShadow: '-10px 5px 0px black', zIndex: '2' }}>
-        <span>{t('localize.4')}</span>
-      </p>
-      <p>
-        <span>{t('localize.5')}</span>
-      </p>
-      <img src={OverlappingCar} className={overlapping.twoLines} />
+      <p><span>{t('localize.1')}</span></p>
+      <p><span>{t('localize.2')}</span></p>
+      <p><span>{t('localize.3')}</span></p>
+      <p style={{backgroundColor: 'black', zIndex: 1, paddingBottom: '11px'}}>{t('localize.4')}</p>
+      <p style={{position: 'relative', top: '-5px'}}>{t('localize.5')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
     </>
   );
 };
 
-const LocalizeEn: FC = () => {
+const LocalizeEN: FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -39,35 +35,90 @@ const LocalizeEn: FC = () => {
       <p>
         <span>{t('localize.3')}</span>
       </p>
-      <img
-        src={OverlappingCar}
-        className={overlapping.twoLines}
-        style={{ marginBottom: 114 }}
-      />
+      <img src={OverlappingCar} className={overlapping.thirdLine} />
     </>
   );
 };
 
-const LocalizeIt: FC = () => {
+const LocalizeIT: FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
-      <p>{t('localize.1')}</p>
-      <p>{t('localize.2')}</p>
-      <p>{t('localize.3')}</p>
+      <p>
+        <span>{t('localize.1')}</span>
+      </p>
+      <p>
+        <span>{t('localize.2')}</span>
+      </p>
+      <p>
+        <span>{t('localize.3')}</span>
+      </p>
       <p>{t('localize.4')}</p>
+      <p>{t('localize.5')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
+    </>
+  );
+};
+
+const LocalizeES: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
       <p>
-        <span>{t('localize.5')}</span>
+        <span>{t('localize.1')}</span>
       </p>
       <p>
-        <span>{t('localize.6')}</span>
+        <span>{t('localize.2')}</span>
       </p>
-      <img
-        src={OverlappingCar}
-        className={overlapping.twoLines}
-        style={{ marginBottom: -114 }}
-      />
+      <p>
+        <span>{t('localize.3')}</span>
+      </p>
+      <p>{t('localize.4')}</p>
+      <p>{t('localize.5')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
+    </>
+  );
+};
+
+const LocalizeDE: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>
+        <span>{t('localize.1')}</span>
+      </p>
+      <p>
+        <span>{t('localize.2')}</span>
+      </p>
+      <p>
+        <span>{t('localize.3')}</span>
+      </p>
+      <p>{t('localize.4')}</p>
+      <p>{t('localize.5')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
+    </>
+  );
+};
+
+const LocalizeNL: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>
+        <span>{t('localize.1')}</span>
+      </p>
+      <p>
+        <span>{t('localize.2')}</span>
+      </p>
+      <p>
+        <span>{t('localize.3')}</span>
+      </p>
+      <p>{t('localize.4')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
     </>
   );
 };
@@ -76,6 +127,8 @@ export const Localize: FC = () => {
   const { goHub, goLocalizeVideo } = useHistory();
   const { t, i18n } = useTranslation();
   const { isFinish } = useIdle(config.redirectionTimer.firstScreen);
+
+  const currentLanguage = i18n.language;
 
   if (isFinish) {
     goHub();
@@ -94,9 +147,12 @@ export const Localize: FC = () => {
       </div>
       <div className={tileFirstClassname.text}>
         <CarIcon width={256.1} height={292.69} />
-        {i18n.language === language.fr && <LocalizeFr />}
-        {i18n.language === language.en && <LocalizeEn />}
-        {i18n.language === language.it && <LocalizeIt />}
+        {currentLanguage === language.fr && <LocalizeFR />}
+        {currentLanguage === language.en && <LocalizeEN />}
+        {currentLanguage === language.it && <LocalizeIT />}
+        {currentLanguage === language.es && <LocalizeES />}
+        {currentLanguage === language.de && <LocalizeDE />}
+        {currentLanguage === language.nl && <LocalizeNL />}
       </div>
       <div className={ctaClassname}>
         <Button onClick={goLocalizeVideo}>{t('localize.cta')}</Button>

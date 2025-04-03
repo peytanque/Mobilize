@@ -2,83 +2,83 @@
   "home": {
     "my": "my",
     "duo": "duo",
-    "sub": "l’app che guida la tua duo",
-    "cta": "scoprire"
+    "sub": "L'APP CHE CONTROLLA IL TUO DUO",
+    "cta": "SCOPRI"
   },
   "hub": {
     "control": {
-      "1": "apri la ",
-      "2": "tua DUO",
-      "3": "senza",
-      "4": "chiavi"
+      "1": "apri",
+      "2": "IL TUO",
+      "3": "DUO SENZA",
+      "4": "CHIAVE"
     },
     "charging": {
-      "1": "gestisci",
+      "1": "controlla",
       "2": "la tua",
-      "3": "autonomia"
+      "3": "carica"
     },
     "share": {
-      "1": "condividi",
-      "2": "la tua",
+      "1": "CONDIVIDI",
+      "2": "IL TUO",
       "3": "DUO"
     },
     "localize": {
-      "1": "monitora",
-      "2": "il tuo",
-      "3": "ordine"
+      "1": "SEGUI",
+      "2": "IL TUO",
+      "3": "ORDINE"
     }
   },
   "control": {
-    "1": "gestisci",
-    "2": "facilmente",
-    "3": "la tua duo",
-    "4": "ovunque",
-    "5": "tu sia",
-    "cta": "cominciamo!"
+    "1": "GESTISCI",
+    "2": "FACILMENTE",
+    "3": "IL TUO DUO",
+    "4": "OVUNQUE",
+    "5": "TU SIA",
+    "cta": "PRONTI, VIA!"
   },
   "charging": {
-    "1": "tieni",
-    "2": "d’occhio il",
-    "3": "livello",
-    "4": "d’autonomia",
-    "5": "della tua",
-    "6": "DUO",
-    "cta": "cominciamo!"
+    "1": "TIENI",
+    "2": "D'OCCHIO",
+    "3": "IL LIVELLO",
+    "4": "DI AUTONOMIA",
+    "5": "DEL TUO DUO",
+    "cta": "PRONTI, VIA!"
   },
   "share": {
-    "1": "condividi",
-    "2": "duo con la",
-    "3": "tua TRIBU",
-    "cta": "cominciamo!"
+    "1": "CONDIVIDI",
+    "2": "DUO CON LA",
+    "3": "TUA TRIBÙ",
+    "cta": "PRONTI, VIA!"
   },
   "localize": {
-    "1": "segui",
-    "2": "l’ordine",
-    "3": "della tua",
-    "4": "duo",
-    "5": "in tempo",
-    "6": "reale",
-    "cta": "cominciamo!"
+    "1": "SEGUI",
+    "2": "L'ORDINE",
+    "3": "DEL TUO DUO",
+    "4": "IN TEMPO",
+    "5": "REALE",
+    "cta": "PRONTI, VIA!"
   },
   "control-last": {
-    "1": "sei sempre tu",
+    "1": "SEI SEMPRE",
     "2": "al comando",
-    "cta": "scopri un’altra funzionalità"
+    "cta": "SCOPRI DI PIÙ"
   },
   "charging-last": {
-    "1": "ora sei",
-    "2": "al corrente",
-    "cta": "scopri un’altra funzionalità"
+    "1": "ORA SEI",
+    "2": "SEMPRE",
+    "3": "INFORMATO",
+    "cta": "SCOPRI DI PIÙ"
   },
   "share-last": {
-    "1": "hai in tasca",
-    "2": "le chiavi del",
-    "3": "successo",
-    "cta": "scopri un’altra funzionalità"
+    "1": "SEI TU AD",
+    "2": "AVERE LE",
+    "3": "CHIAVI DEL",
+    "4": "SUCCESSO",
+    "cta": "SCOPRI DI PIÙ"
   },
   "localize-last": {
-    "1": "conosci ",
-    "2": "il percorso",
-    "cta": "scopri un’altra funzionalità"
+    "1": "CONOSCI",
+    "2": "LA STRADA",
+    "cta": "SCOPRI DI PIÙ"
   }
 }

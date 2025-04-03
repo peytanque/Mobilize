@@ -9,42 +9,69 @@ import ReactPlayer from 'react-player';
 import { useTranslation } from 'react-i18next';
 
 
-const LocalizeLastFr: FC = () => {
+const LocalizeLastFR: FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
       <p>{t('localize-last.1')}</p>
       <p>{t('localize-last.2')}</p>
-      <p>
-        <span>{t('localize-last.3')}</span>
-      </p>
+      <p><span>{t('localize-last.3')}</span></p>
     </>
   );
 };
 
-const LocalizeLastEn: FC = () => {
+const LocalizeLastEN: FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
       <p>{t('localize-last.1')}</p>
-      <p>
-        <span>{t('localize-last.2')}</span>
-      </p>
+      <p><span>{t('localize-last.2')}</span></p>
     </>
   );
 };
 
-const LocalizeLastIt: FC = () => {
+const LocalizeLastIT: FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
       <p>{t('localize-last.1')}</p>
-      <p>
-        <span>{t('localize-last.2')}</span>
-      </p>
+      <p><span>{t('localize-last.2')}</span></p>
+    </>
+  );
+};
+
+const LocalizeLastES: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('localize-last.1')}</p>
+      <p><span>{t('localize-last.2')}</span></p>
+    </>
+  );
+};
+
+const LocalizeLastDE: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('localize-last.1')}</p>
+      <p><span>{t('localize-last.2')}</span></p>
+    </>
+  );
+};
+
+const LocalizeLastNL: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('localize-last.1')}</p>
+      <p><span>{t('localize-last.2')}</span></p>
     </>
   );
 };
@@ -56,6 +83,8 @@ export const LocalizeLast: FC = () => {
 
   const { t, i18n } = useTranslation();
 
+  const currentLanguage = i18n.language;
+
   if (isFinish) {
     goHub();
   }
@@ -63,9 +92,12 @@ export const LocalizeLast: FC = () => {
   return (
     <div className={tileLastClassname.box}>
       <div className={tileLastClassname.text}>
-        {i18n.language === language.fr && <LocalizeLastFr />}
-        {i18n.language === language.en && <LocalizeLastEn />}
-        {i18n.language === language.it && <LocalizeLastIt />}
+      {currentLanguage === language.fr && <LocalizeLastFR />}
+        {currentLanguage === language.en && <LocalizeLastEN />}
+        {currentLanguage === language.it && <LocalizeLastIT />}
+        {currentLanguage === language.es && <LocalizeLastES />}
+        {currentLanguage === language.de && <LocalizeLastDE />}
+        {currentLanguage === language.nl && <LocalizeLastNL />}
       </div>
       <div className={tileLastClassname.button}>
         <Button

@@ -8,7 +8,7 @@ import { config } from '@config';
 import ReactPlayer from 'react-player';
 import { useTranslation } from 'react-i18next';
 
-const ControlLastFr: FC = () => {
+const ControlLastFR: FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -24,7 +24,7 @@ const ControlLastFr: FC = () => {
   );
 };
 
-const ControlLastEn: FC = () => {
+const ControlLastEN: FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -37,7 +37,7 @@ const ControlLastEn: FC = () => {
   );
 };
 
-const ControlLastIt: FC = () => {
+const ControlLastIT: FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -49,13 +49,61 @@ const ControlLastIt: FC = () => {
     </>
   );
 };
+
+const ControlLastES: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('control-last.1')}</p>
+      <p>{t('control-last.2')}</p>
+      <p>
+        <span>{t('control-last.3')}</span>
+      </p>
+    </>
+  );
+};
+
+const ControlLastDE: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('control-last.1')}</p>
+      <p>{t('control-last.2')}</p>
+      <p>
+        <span>{t('control-last.3')}</span>
+      </p>
+    </>
+  );
+};
+
+const ControlLastNL: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>{t('control-last.1')}</p>
+      <p>{t('control-last.2')}</p>
+      <p>
+        <span>{t('control-last.3')}</span>
+      </p>
+      <p>
+        <span>{t('control-last.4')}</span>
+      </p>
+    </>
+  );
+};
+
 
 export const ControlLast: FC = () => {
   const { isFinish, isAnimatingReset } = useIdle(config.redirectionTimer.lastScreen);
   const { goHub } = useHistory();
   const { onProgress } = useVideo();
-
+  
   const { t, i18n } = useTranslation();
+
+  const currentLanguage = i18n.language;
 
   if (isFinish) {
     goHub();
@@ -64,9 +112,12 @@ export const ControlLast: FC = () => {
   return (
     <div className={tileLastClassname.box}>
       <div className={tileLastClassname.text}>
-        {i18n.language === language.fr && <ControlLastFr />}
-        {i18n.language === language.en && <ControlLastEn />}
-        {i18n.language === language.it && <ControlLastIt />}
+        {currentLanguage === language.fr && <ControlLastFR />}
+        {currentLanguage === language.en && <ControlLastEN />}
+        {currentLanguage === language.it && <ControlLastIT />}
+        {currentLanguage === language.es && <ControlLastES />}
+        {currentLanguage === language.de && <ControlLastDE />}
+        {currentLanguage === language.nl && <ControlLastNL />}
       </div>
       <div className={tileLastClassname.button}>
         <Button

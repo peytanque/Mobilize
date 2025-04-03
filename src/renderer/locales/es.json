@@ -1,0 +1,79 @@
+{
+  "home": {
+    "my": "my",
+    "duo": "duo",
+    "sub": "LA APLICACIÓN QUE CONTROLA TU DUO",
+    "cta": "DESCUBRIR"
+  },
+  "hub": {
+    "control": {
+      "1": "ABRE",
+      "2": "TU DUO SIN",
+      "3": "NECESIDAD",
+      "4": "DE LLAVE"
+    },
+    "charging": {
+      "1": "controla",
+      "2": "tu carga"
+    },
+    "share": {
+      "1": "COMPARTE",
+      "2": "TU DUO"
+    },
+    "localize": {
+      "1": "SIGUE",
+      "2": "TU PEDIDO"
+    }
+  },
+  "control": {
+    "1": "GESTIONA",
+    "2": "FÁCILMENTE",
+    "3": "TU DUO",
+    "4": "ESTÉS DONDE",
+    "5": "ESTÉS",
+    "cta": "¡COMENZAMOS!"
+  },
+  "charging": {
+    "1": "CONTROLA",
+    "2": "EL NIVEL DE",
+    "3": "AUTONOMÍA",
+    "4": "DE TU DUO",
+    "cta": "¡COMENZAMOS!"
+  },
+  "share": {
+    "1": "COMPARTE",
+    "2": "TU DUO CON",
+    "3": "TU FAMILIA",
+    "cta": "¡COMENZAMOS!"
+  },
+  "localize": {
+    "1": "SIGUE",
+    "2": "EL PEDIDO",
+    "3": "DE TU DUO",
+    "4": "EN TIEMPO",
+    "5": "REAL",
+    "cta": "¡COMENZAMOS!"
+  },
+  "control-last": {
+    "1": "SIEMPRE",
+    "2": "TIENES",
+    "3": "EL CONTROL",
+    "cta": "DESCUBRIR MÁS"
+  },
+  "charging-last": {
+    "1": "AHORA YA LO",
+    "2": "SABES",
+    "cta": "DESCUBRIR MÁS"
+  },
+  "share-last": {
+    "1": "TIENES",
+    "2": "LA LLAVE DEL",
+    "3": "ÉXITO",
+    "cta": "DESCUBRIR MÁS"
+  },
+  "localize-last": {
+    "1": "CONOCES",
+    "2": "EL CAMINO",
+    "cta": "DESCUBRIR MÁS"
+  }
+}
