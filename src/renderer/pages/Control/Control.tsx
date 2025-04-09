@@ -10,28 +10,28 @@ import { useTranslation } from 'react-i18next';
 
 import OverlappingCar from './../../assets/overlapping-car.png';
 
-const ControlFr: FC = () => {
+const ControlFR: FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
-      <p>{t('control.1')}</p>
-      <p>{t('control.2')}</p>
-      <p style={{ textShadow: '0px 7px 0 black', zIndex: '2' }}>
-        {t('control.3')}
+      <p>
+        <span>{t('control.1')}</span>
       </p>
       <p>
-        <span>{t('control.4')}</span>
+        <span>{t('control.2')}</span>
       </p>
-      <p>
-        <span>{t('control.5')}</span>
+      <p style={{ backgroundColor: 'black', paddingBottom: '11px', zIndex: 1 }}>
+        <span>{t('control.3')}</span>
       </p>
-      <img src={OverlappingCar} className={overlapping.twoLines} />
+      <p style={{ position: 'relative', top: '-5px' }}>{t('control.4')}</p>
+      <p>{t('control.5')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
     </>
   );
 };
 
-const ControlEn: FC = () => {
+const ControlEN: FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -45,26 +45,105 @@ const ControlEn: FC = () => {
       <p>
         <span>{t('control.5')}</span>
       </p>
-      <img src={OverlappingCar} className={overlapping.twoLines} />
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
     </>
   );
 };
 
-const ControlIt: FC = () => {
+const ControlIT: FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
-      <p>{t('control.1')}</p>
-      <p>{t('control.2')}</p>
-      <p>{t('control.3')}</p>
       <p>
-        <span>{t('control.4')}</span>
+        <span>{t('control.1')}</span>
       </p>
       <p>
-        <span>{t('control.5')}</span>
+        <span>{t('control.2')}</span>
       </p>
-      <img src={OverlappingCar} className={overlapping.twoLines} />
+      <p>
+        <span>{t('control.3')}</span>
+      </p>
+      <p>{t('control.4')}</p>
+      <p>{t('control.5')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
+    </>
+  );
+};
+
+const ControlES: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p style={{ backgroundColor: 'black', paddingBottom: '11px', zIndex: 1 }}>
+        <span>{t('control.1')}</span>
+      </p>
+      <p style={{position: 'relative', top: '-5px'}}>
+        <span>{t('control.2')}</span>
+      </p>
+      <p
+        style={{ backgroundColor: 'black', paddingBottom: '11px', zIndex: '5' }}
+      >
+        <span>{t('control.3')}</span>
+      </p>
+      <p
+        style={{
+          position: 'relative',
+          top: '-5px',
+          backgroundColor: 'black',
+          paddingBottom: '11px',
+          zIndex: '4',
+        }}
+      >
+        {t('control.4')}
+      </p>
+      <p style={{ position: 'relative', top: '-10px' }}>{t('control.5')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
+    </>
+  );
+};
+
+const ControlDE: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>
+        <span>{t('control.1')}</span>
+      </p>
+      <p>
+        <span>{t('control.2')}</span>
+      </p>
+      <p
+        style={{ backgroundColor: 'black', paddingBottom: '11px', zIndex: '5' }}
+      >
+        <span>{t('control.3')}</span>
+      </p>
+      <p style={{ position: 'relative', top: '-5px' }}>{t('control.4')}</p>
+      <p>{t('control.5')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
+    </>
+  );
+};
+
+const ControlNL: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>
+        <span>{t('control.1')}</span>
+      </p>
+      <p>
+        <span>{t('control.2')}</span>
+      </p>
+      <p>
+        <span>{t('control.3')}</span>
+      </p>
+      <p>{t('control.4')}</p>
+      <p>{t('control.5')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
     </>
   );
 };
@@ -73,6 +152,8 @@ export const Control: FC = () => {
   const { goHub, goControlVideo } = useHistory();
   const { t, i18n } = useTranslation();
   const { isFinish } = useIdle(config.redirectionTimer.firstScreen);
+
+  const currentLanguage = i18n.language;
 
   if (isFinish) {
     goHub();
@@ -91,9 +172,12 @@ export const Control: FC = () => {
       </div>
       <div className={tileFirstClassname.text}>
         <LockIcon width={224} height={294} />
-        {i18n.language === language.fr && <ControlFr />}
-        {i18n.language === language.en && <ControlEn />}
-        {i18n.language === language.it && <ControlIt />}
+        {currentLanguage === language.fr && <ControlFR />}
+        {currentLanguage === language.en && <ControlEN />}
+        {currentLanguage === language.it && <ControlIT />}
+        {currentLanguage === language.es && <ControlES />}
+        {currentLanguage === language.de && <ControlDE />}
+        {currentLanguage === language.nl && <ControlNL />}
       </div>
       <div className={ctaClassname}>
         <Button onClick={goControlVideo}>{t('control.cta')}</Button>

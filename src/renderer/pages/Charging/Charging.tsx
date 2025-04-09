@@ -10,70 +10,116 @@ import { useTranslation } from 'react-i18next';
 
 import OverlappingCar from './../../assets/overlapping-car.png';
 
-const ChargingFr: FC = () => {
+const ChargingFR: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>
+        <span>{t('charging.1')}</span>
+      </p>
+      <p>
+        <span>{t('charging.2')}</span>
+      </p>
+      <p>{t('charging.3')}</p>
+      <p>{t('charging.4')}</p>
+      <img src={OverlappingCar} className={overlapping.thirdLine} />
+    </>
+  );
+};
+
+const ChargingEN: FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
       <p>{t('charging.1')}</p>
       <p>{t('charging.2')}</p>
+      <p>{t('charging.3')}</p>
+      <p>
+        <span>{t('charging.4')}</span>
+      </p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
+    </>
+  );
+};
+
+const ChargingIT: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>
+        <span>{t('charging.1')}</span>
+      </p>
+      <p>
+        <span>{t('charging.2')}</span>
+      </p>
       <p>
         <span>{t('charging.3')}</span>
       </p>
-      <p>
-        <span>{t('charging.4')}</span>
-      </p>
-      <img
-        src={OverlappingCar}
-        className={overlapping.twoLines}
-        style={{ marginBottom: 114 }}
-      />
+      <p>{t('charging.4')}</p>
+      <p>{t('charging.5')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
     </>
   );
 };
 
-const ChargingEn: FC = () => {
+const ChargingES: FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
-      <p>{t('charging.1')}</p>
-      <p>{t('charging.2')}</p>
-      <p>{t('charging.3')}</p>
       <p>
-        <span>{t('charging.4')}</span>
+        <span>{t('charging.1')}</span>
       </p>
-      <img
-        src={OverlappingCar}
-        className={overlapping.oneLine}
-        style={{ marginBottom: 114 }}
-      />
+      <p
+        style={{ backgroundColor: 'black', paddingBottom: '11px', zIndex: '1' }}
+      >
+        <span>{t('charging.2')}</span>
+      </p>
+      <p style={{ position: 'relative', top: '-5px' }}>{t('charging.3')}</p>
+      <p>{t('charging.4')}</p>
+      <img src={OverlappingCar} className={overlapping.thirdLine} />
     </>
   );
 };
 
-const ChargingIt: FC = () => {
+const ChargingDE: FC = () => {
   const { t } = useTranslation();
 
   return (
     <>
-      <p>{t('charging.1')}</p>
-      <p>{t('charging.2')}</p>
+      <p>
+        <span>{t('charging.1')}</span>
+      </p>
+      <p>
+        <span>{t('charging.2')}</span>
+      </p>
+      <p>
+        <span>{t('charging.3')}</span>
+      </p>
+      <p>{t('charging.4')}</p>
+      <p>{t('charging.5')}</p>
+      <img src={OverlappingCar} className={overlapping.fourthLine} />
+    </>
+  );
+};
+
+const ChargingNL: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <p>
+        <span>{t('charging.1')}</span>
+      </p>
+      <p>
+        <span>{t('charging.2')}</span>
+      </p>
       <p>{t('charging.3')}</p>
-      <p>
-        <span>{t('charging.4')}</span>
-      </p>
-      <p>
-        <span>{t('charging.5')}</span>
-      </p>
-      <p>
-        <span>{t('charging.6')}</span>
-      </p>
-      <img
-        src={OverlappingCar}
-        className={overlapping.oneLine}
-        style={{ marginBottom: 114 }}
-      />
+      <p>{t('charging.4')}</p>
+      <img src={OverlappingCar} className={overlapping.thirdLine} />
     </>
   );
 };
@@ -82,6 +128,8 @@ export const Charging: FC = () => {
   const { goHub, goChargingVideo } = useHistory();
   const { t, i18n } = useTranslation();
   const { isFinish } = useIdle(config.redirectionTimer.firstScreen);
+
+  const currentLanguage = i18n.language;
 
   if (isFinish) {
     goHub();
@@ -100,9 +148,12 @@ export const Charging: FC = () => {
       </div>
       <div className={tileFirstClassname.text}>
         <FlashIcon width={259.16} height={294} />
-        {i18n.language === language.fr && <ChargingFr />}
-        {i18n.language === language.en && <ChargingEn />}
-        {i18n.language === language.it && <ChargingIt />}
+        {currentLanguage === language.fr && <ChargingFR />}
+        {currentLanguage === language.en && <ChargingEN />}
+        {currentLanguage === language.it && <ChargingIT />}
+        {currentLanguage === language.es && <ChargingES />}
+        {currentLanguage === language.de && <ChargingDE />}
+        {currentLanguage === language.nl && <ChargingNL />}
       </div>
       <div className={ctaClassname}>
         <Button onClick={goChargingVideo}>{t('charging.cta')}</Button>

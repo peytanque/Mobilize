@@ -1,0 +1,87 @@
+{
+  "home": {
+    "my": "my",
+    "duo": "duo",
+    "sub": "DIE APP, DIE IHREN DUO STEUERT",
+    "cta": "ENTDECKEN"
+  },
+  "hub": {
+    "control": {
+      "1": "ÖFFNEN SIE",
+      "2": "IHREN DUO GANZ",
+      "3": "OHNE SCHLÜSSEL"
+    },
+    "charging": {
+      "1": "KONTROLLIEREN",
+      "2": "SIE",
+      "3": "IHRE",
+      "4": "LADUNG"
+    },
+    "share": {
+      "1": "TEILEN",
+      "2": "SIE",
+      "3": "IHREN",
+      "4": "DUO"
+    },
+    "localize": {
+      "1": "VERFOLGEN",
+      "2": "SIE",
+      "3": "IHRE",
+      "4": "BESTELLUNG"
+    }
+  },
+  "control": {
+    "1": "VERWALTEN",
+    "2": "SIE IHREN DUO",
+    "3": "GANZ EINFACH",
+    "4": "VON ÜBERALL",
+    "5": "AUS",
+    "cta": "LOS GEHT’S!"
+  },
+  "charging": {
+    "1": "BEHALTEN",
+    "2": "SIE DIE",
+    "3": "REICHWEITE",
+    "4": "IHRES DUO IM",
+    "5": "AUGE",
+    "cta": "LOS GEHT’S!"
+  },
+  "share": {
+    "1": "TEILEN SIE",
+    "2": " DUO MIT IHRER",
+    "3": "FAMILIE",
+    "cta": "LOS GEHT’S!"
+  },
+  "localize": {
+    "1": "VERFOLGEN",
+    "2": "SIE DIE",
+    "3": "BESTELLUNG",
+    "4": "IHRES DUO",
+    "5": "IN ECHTZEIT",
+    "cta": "LOS GEHT’S!"
+  },
+  "control-last": {
+    "1": "SIE HABEN",
+    "2": "WEITER DIE",
+    "3": "KONTROLLE",
+    "cta": "ENTDECKEN SIE DIE FORTSETZUNG"
+  },
+  "charging-last": {
+    "1": "SIE SIND NUN",
+    "2": "AUF DEM",
+    "3": "LAUFENDEN",
+    "cta": "ENTDECKEN SIE DIE FORTSETZUNG"
+  },
+  "share-last": {
+    "1": "SIE HALTEN DEN",
+    "2": "SCHLÜSSEL",
+    "3": "ZUM ERFOLG",
+    "4": "IN DER HAND",
+    "cta": "ENTDECKEN SIE DIE FORTSETZUNG"
+  },
+  "localize-last": {
+    "1": "SIE KENNEN",
+    "2": "DEN WEG",
+    "cta": "ENTDECKEN SIE DIE FORTSETZUNG"
+  }
+}

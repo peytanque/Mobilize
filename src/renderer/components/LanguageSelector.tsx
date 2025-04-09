@@ -1,7 +1,8 @@
-import { FC, useState } from 'react';
-import { VerticalSeparatorIcon } from '@icons';
+import { FC, useEffect, useRef, useState } from 'react';
+import { BottomCaret } from '@icons';
 import { useTranslation } from 'react-i18next';
-import { SupportedLanguage } from '@config';
+
+export type SupportedLanguage = 'fr' | 'en' | 'it' | 'es' | 'de' | 'nl';
 
 type Language = {
   code: string;
@@ -10,46 +11,98 @@ type Language = {
 
 export const language: Record<SupportedLanguage, string> = {
   fr: 'fr-FR',
-  en: 'en-US',
   it: 'it-IT',
+  en: 'en-US',
+  es: 'es-ES',
+  de: 'de-DE',
+  nl: 'nl-BE',
 };
 
 const languageList: Language[] = [
+  { name: 'it', code: language.it },
   { name: 'fr', code: language.fr },
   { name: 'en', code: language.en },
-  // { name: 'it', code: language.it },
+  { name: 'es', code: language.es },
+  { name: 'de', code: language.de },
+  { name: 'nl', code: language.nl },
 ];
 
 export const LanguageSelector: FC = () => {
+  const [listToggled, setListToggled] = useState<boolean>(false);
+  const ref = useRef<HTMLDivElement | null>(null);
   const { i18n } = useTranslation();
-  const [currentLanguage, setCurrentLanguage] = useState<SupportedLanguage>(
-    i18n.language as SupportedLanguage ?? 'fr',
+
+  const i18nCurrentLanguage: Language = languageList.filter(
+    (language) => language.code === i18n.language,
+  )[0];
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (ref.current && !ref.current.contains(event.target as Node)) {
+      setListToggled(false);
+    }
+  };
+
+  const handleClickInside = () => {
+    setListToggled(!listToggled);
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const [currentLanguage, setCurrentLanguage] = useState<Language>(
+    i18nCurrentLanguage ?? languageList[0],
   );
 
   const setLanguage = (language: Language) => {
     i18n.changeLanguage(language.code);
-    setCurrentLanguage(language.code as SupportedLanguage);
+    setListToggled(false);
+    setCurrentLanguage(language);
   };
 
+  const commonStyle =
+    'text-[50px] font-bold  uppercase bg-mineShaft px-[25px] py-[10px] leading-[60px]';
+
+  const selectedValueStyle = `flex flex-row items-center gap-[14px] text-white ${commonStyle}`;
+  const selectableValueStyle = `flex justify-center flex-row items-center gap-[14px] text-[#424242] border-t-[3px] border-black  ${commonStyle}`;
+
+  // asc - selectedValue
+  const sortedLanguages = languageList
+    .filter((language) => language.name !== currentLanguage.name)
+    .sort((key, val) => key.name.localeCompare(val.name));
+
   return (
-    <div className="absolute top-[58px] right-[70px] flex flex-row items-center justify-center text-scropion text-[50px] font-bold z-10">
-      {languageList.map((language, index) => (
+    <div
+      className="absolute z-20 top-[55px] right-[73px] border-[3px] border-black rounded-[6px]"
+      onClick={(e: React.MouseEvent<HTMLElement>) => {
+        // évite la redirection auto sur les écrans concernés
+        e.stopPropagation();
+      }}
+      ref={ref}
+    >
+      <div className={selectedValueStyle} onClick={handleClickInside}>
+        <div>{currentLanguage.name}</div>
         <div
-          key={language.code}
-          onClick={(e: React.MouseEvent<HTMLElement>) => {
-            setLanguage(language);
-            e.stopPropagation();
-          }}
-          className={`flex flex-row items-baseline  ${currentLanguage === language.code && 'text-white'}`}
+          className={`transform transition-transform duration-300 ${listToggled ? 'rotate-180' : 'rotate-0'}`}
         >
-          {language.name.toUpperCase()}
-          <div className="text-scropion mx-[18px]">
-            {index + 1 < languageList.length && (
-              <VerticalSeparatorIcon fill="#5C5C5C" />
-            )}
-          </div>
+          <BottomCaret fill="white" />
         </div>
-      ))}
+      </div>
+
+      {listToggled &&
+        sortedLanguages
+          .map((language) => (
+            <div
+              key={language.code}
+              className={selectableValueStyle}
+              onClick={() => setLanguage(language)}
+            >
+              {language.name}
+            </div>
+          ))}
     </div>
   );
 };
